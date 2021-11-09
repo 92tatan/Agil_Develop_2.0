@@ -3,4 +3,4 @@ Proyecto MinTic Ciclo 4 - Programadores- Freddy Zamora Casallas, María Antonia 
 
 Presentación Antonia:
 
-Mi nombre es Antonia Cardozo, tengo 30 años  Estudié psicología y actualmente estoy estudiando física en la Universidad del Quindío. 
+Mi nombre es Antonia Cardozo, Soy de la ciudad de Bogotá, estudié psicología y actualmente estudio física. Me gusta el Circo y el Cine. 

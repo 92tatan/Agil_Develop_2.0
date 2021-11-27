@@ -1,4 +1,8 @@
 'use strict'
+
+//Variables de entorno
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3002;
@@ -6,8 +10,8 @@ const port = process.env.PORT || 3002;
 // Conexion a BDs
 const mongoose = require('mongoose');
 
-const user = 'admin';
-const password = 'Q1w2e3r45t';
+const user = 'Aleja';
+const password = '2002';
 /* const dbname = 'veterinaria'; */
 const dbname = 'Proyecto_test';
 const uri = `mongodb+srv://${user}:${password}@cluster0.isgyv.mongodb.net/${dbname}?retryWrites=true&w=majority`;
@@ -36,3 +40,5 @@ app.use('/test',require('./router/Routertest'));
 
 // Rutas de web para proyectos
 app.use('/proyectos',require('./router/Proyectos'));
+// Ruta Usuarios
+app.use('/api/administrador', require('./router/RouterUsuarios'));

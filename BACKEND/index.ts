@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3002;
+import { isConstructorDeclaration } from "typescript";
 import { inscriptionModel } from "./models/inscription";
 
 // Conexion a BDs
@@ -17,6 +18,8 @@ mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log(`Bases de datos ${dbname} conectada`))
   .catch((e) => console.log(e));
+
+  
 
 // elemento necesario para counicacion URL deco. reconcimiento de JSON
 app.use(express.urlencoded({ extended: false }));
@@ -36,3 +39,14 @@ app.use("/proyectos", require("./router/Proyectos"));
 
 // Rutas de web para Inscripciones
 app.use("/inscripciones", require("./router/Inscripciones"));
+
+const main = async () =>{
+  inscriptionModel.create({
+    id_proyecto:"2"
+  }).then((u)=>{
+  console.log("creado", u)
+  }).catch((e)=>{
+    console.log("error al crear", e)
+  });
+}
+

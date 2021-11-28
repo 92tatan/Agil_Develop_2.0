@@ -1,0 +1,7 @@
+// Archivo necesario para trabajar con typescript, y usar los imports
+{
+    "compilerOptions": {
+        "module": "CommonJs"
+    }
+}
+

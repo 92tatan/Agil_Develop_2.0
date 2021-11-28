@@ -3,8 +3,6 @@ const router = express.Router();
 
 const Inscripcion = require("../models/inscripcion");
 
-// Listar todos las inscripciones
-
 // lista todas las inscripciones
 router.get("/", async (req, res) => {
   try {
@@ -15,6 +13,14 @@ router.get("/", async (req, res) => {
     console.log(error);
   }
 });
+
+/*await Inscripcion.find()
+  .then((u) => {
+    console.log("inscripciones: ", u);
+  })
+  .catch((e) => {
+    console.log("error en inscripcion: ", e);
+  });*/
 
 // Buscar una inscripcion por Id_inscripcion
 

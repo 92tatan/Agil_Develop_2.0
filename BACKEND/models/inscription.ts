@@ -5,7 +5,7 @@ const inscriptionSchema = new Schema({
         type: String,               // cambiarlo a tipo proyecto 
         required: true,
         //unique: true                // Solo para pruebas    
-    },
+    }/* ,
     id_estudiante:{
         type:String,                // cambiarlo a tipo user
         required:true
@@ -21,7 +21,7 @@ const inscriptionSchema = new Schema({
     fecha_egreso:{
         type:String,
         required:true
-    }
+    } */
 });
 
 const inscriptionModel =  model('Inscription', inscriptionSchema);

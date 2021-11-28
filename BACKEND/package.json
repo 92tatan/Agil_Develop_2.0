@@ -2,9 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "api service modulo proyectos",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js",
+  "main": "index.js",  
+  
+  "scripts": {    
+    "start":"ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +24,9 @@
   "homepage": "https://github.com/92tatan/Agil_Develop_2.0#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^6.0.13"
+    "mongoose": "^6.0.13",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

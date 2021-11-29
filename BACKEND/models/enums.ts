@@ -1,6 +1,7 @@
-enum Enum_Estado {
+enum Enum_EstadoInscripcion {
     aceptada = "Aceptada",
-    rechazada = "Rechazada"
+    rechazada = "Rechazada",
+    pendiente = "Pendiente"
 }
 
-export { Enum_Estado };
+export { Enum_EstadoInscripcion };

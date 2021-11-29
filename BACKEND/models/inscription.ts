@@ -1,30 +1,33 @@
 import { Schema, model } from "mongoose";
-import { Enum_Estado } from './enums';
-
+import { Enum_EstadoInscripcion } from './enums';
+import { projectModel } from './project';
+ 
 
 interface Inscription {
-    id_proyecto: string;
-    id_estudiante: string;
-    estado: Enum_Estado;
+    id_proyecto: Schema.Types.ObjectId;
+    id_estudiante: Schema.Types.ObjectId;
+    estado: Enum_EstadoInscripcion;
     fecha_ingreso: Date
     fecha_egreso: Date;
 }
 
 const inscriptionSchema = new Schema<Inscription>({
     id_proyecto:{
-        type: String,               // cambiarlo a tipo proyecto 
+        type: Schema.Types.ObjectId,   
+        ref: projectModel,      
         required: true,
         //unique: true                  
     } ,
     id_estudiante:{
-        type:String,                // cambiarlo a tipo user
+        type: Schema.Types.ObjectId,   
         required:true, 
         //unique:true
     },
     estado:{
         type:String,
         required:true,
-        enum:Enum_Estado
+        enum:Enum_EstadoInscripcion,
+        default: Enum_EstadoInscripcion.pendiente
     },
     fecha_ingreso:{
         type:Date,

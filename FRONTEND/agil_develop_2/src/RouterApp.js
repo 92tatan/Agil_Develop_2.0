@@ -1,10 +1,10 @@
 import React from "react";
-import {BrowserRouter as Router, Route,Redirect } from "react-router-dom";
+import {BrowserRouter as Router, Route } from "react-router-dom";
 import {Home} from './Components/ModuloHome/Home';
 import {Login} from './Components/Login';
 import {RegistroProyecto} from './Components/Proyectos/RegistroProyectos';
-import {ExplorarProyecto} from './Components/Proyectos/ExplorarProyectos';
-import {ActualizarProyecto} from './Components/Proyectos/ActualizarProyectos';
+import {ExplorarProyecto} from './Components/Proyectos/Explorar/ExplorarProyectos';
+import {ActualizarProyecto} from './Components/Proyectos/Actualizar/ActualizarProyectos';
 import {InscripcionProyecto} from './Components/Inscripciones/InscripcionProyectos';
 import {ExplorarInscripcion} from './Components/Inscripciones/ExplorarInscripciones';
 import {RegistrarAvance} from './Components/Avances/RegistrarAvances';

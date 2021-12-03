@@ -8,10 +8,10 @@ export default {
     Query: {
         ...Queriesproyecto,
     },
-    /*Mutation: {
+    Mutation: {
 
         ...Mutationsproyecto,
     },
-    ...Restproyecto*/
+    /*...Restproyecto*/
 };
 

@@ -16,7 +16,7 @@ const inscriptionSchema = new Schema<Inscription>({
         type: Schema.Types.ObjectId,   
         ref: projectModel,      
         //required: true,
-        unique: true                  
+        //unique: true                  
     } ,
     id_estudiante:{
         type: Schema.Types.ObjectId,   

@@ -18,6 +18,10 @@ const userSchema = new Schema({
     correo:
     {
         type:String
+    },
+    rol:
+    {
+        type:String
     }
     
     

@@ -28,15 +28,19 @@ const resolvers = {
                 nombre: args.nombre,
                 apellido: args.apellido,
                 telefono: args.telefono,
-                correo: args.correo
+                correo: args.correo,
+                rol:args.rol
             }); 
             console.log("Usuario Creado Ok ");
             return UsuarioCreado;
         },
         crearInscripcion: async (parent, args)=>{
             const InscripcionCreada = await inscriptionModel.create({
-                estado:args.estado    
-                
+            estado:args.estado,    
+            id_estudiante:args.id_estudiante,
+            fecha_ingreso: args.fecha_ingreso,
+            fecha_egreso: args.fecha_egreso,
+            id_proyecto:args.id_proyecto
             });
 
             if(Object.keys(args).includes('estado')){

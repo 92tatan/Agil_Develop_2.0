@@ -2,11 +2,56 @@ import React from "react";
 import {Container, Row,Col} from "react-bootstrap";
 import {BarNavegador} from '../../../NavBar';
 import {CardProyect} from "./CardProyect";
-
+import {useQuery, gql} from "@apollo/client";
 
 export const ExplorarProyecto = ()=> {
+    const traerProyectos = gql`
+        query  {
+            AllProyectos {
+                Id_proyecto
+                Nombre_proyecto
+                Objetivo_general
+                Presupuesto
+                Objetivo_especifico
+                Fase_proyecto
+                Estado_proyecto
+                Documento
+                Apellidos
+                Nombres
+                Fecha_terminacion
+                Fecha_inicio
+            }
+            }`
+    const { data }= useQuery(traerProyectos);
+    console.log( data )
+    
+    return(
+        <>
+        <BarNavegador />
+        <Container>
+            <Row className="mb-3">
+            <h2 className="text-center"> Explorador de Proyectos</h2>
+            </Row>
+            <Row className="mb-3">
+            {data?.AllProyectos?.map((Proy)=>(
+                <Col xs={6} key={Proy.Id_proyecto}>
+                <CardProyect Project={Proy}/>
+                </Col>
+            ))}
+            </Row>
+        </Container>
+        </>
+    )
+}
 
-    const listaProyectos=[
+
+
+
+/* const listaProyectos2 = data?.AllProyectos
+
+    console.log(listaProyectos2);
+
+    const listaProyectos = [
         {   Id_proyecto: 1,
             Nombre_proyecto: "INVESTIGACION EVALUACION DEL CAMBIO GLOBAL EN UN HUMEDAL DEL MEDIO AMAZONAS: SISTEMA YAHUARCACA. FASE I. LETICIA, AMAZONAS",
             Objetivo_general: "Construir colectivamente con el grupo intergeneracional de abuelas, ninos y jovenes de la comunidad ticuna de San Sebastian de los Lagos, un proceso de reflexion/accion en torno a los conceptos tradicionales sobre la Naturaleza",
@@ -46,25 +91,4 @@ export const ExplorarProyecto = ()=> {
             Estado_proyecto:"INACTIVO",
             Fase_proyecto:"EN_PROGRESO"
         }
-    ];
-
-    return(
-        <>
-        <BarNavegador />
-        <Container>
-            <Row className="mb-3">
-            <h2 className="text-center"> Explorador de Proyectos</h2>
-            </Row>
-            <Row className="mb-3">
-            {listaProyectos.map((Proy)=>(
-                <Col xs={6}>
-                <CardProyect Project={Proy}/>
-                </Col>
-            ))}
-            </Row>
-        </Container>
-        </>
-    )
-
-
-}
+    ]; */

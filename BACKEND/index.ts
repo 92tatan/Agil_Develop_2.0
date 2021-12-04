@@ -1,14 +1,12 @@
-import  express from "express";
+import  express, { Router } from "express";
 import  cors  from "cors";
 import {ApolloServer} from "apollo-server-express";
 import dotenv from "dotenv";
 import {typeDefs}  from "./graphql/types";
 import {resolvers} from "./graphql/resolvers";
-import { connect, Mongoose } from "mongoose";
-const port = process.env.PORT ;
-const dbname = 'Proyecto_test';
-const uri = process.env.DATABASE_CONNECTION_STRING;
+import conectarBD from "./mongo/db"
 
+const port = process.env.PORT || 3002;
 
 
 
@@ -22,20 +20,18 @@ const server = new ApolloServer({
 });
 
 const app = express();
+app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 
 app.use(cors());
 
-app.listen({port: 3002}, async()=>{
-    Mongoose.connect(process.env.DATABASE_CONNECTION_STRING,
-        {useNewUrlParser:true, useUnifiedTopology: true}
-    )
-        .then(()=> console.log(`Bases de datos ${app} conectada`))
-        .catch(e => console.log(e))
-    ;
+app.listen({ port: process.env.PORT || 3002 }, async () => {
+    await conectarBD();
     await server.start();
-    server.applyMiddleware({app});
-    console.log("Servidor corriendo");
+  
+    server.applyMiddleware({ app });
+  
+    console.log('servidor listo');
+  });
 
-});

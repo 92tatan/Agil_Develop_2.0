@@ -4,7 +4,7 @@
   "description": "api service modulo proyectos",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +33,8 @@
     "mongoose": "^6.0.13"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   }
 }

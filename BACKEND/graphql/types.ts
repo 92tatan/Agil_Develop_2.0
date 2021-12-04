@@ -14,18 +14,30 @@ const typeDefs = gql`
 
 
   type Usuario{
-    _id: ID
+    _id: ID!
     Nombres: String!
-    Apellidos : String!
-    Documento : String!
+    Apellidos : String
+    Documento : Int
     Email : String!
-    Status: enum_EstadoUsuario!
-    Rol : enum_Rol!
+    Rol : Enum_Rol!
+    Status: Enum_EstadoUsuario!
+   
 
 
   }
   type Query{
     Usuarios: [Usuario]
+  }
+  type Mutation{
+    crearUsuario(
+    Nombres: String!
+    Apellidos : String!
+    Documento : Int!
+    Email : String!
+    Status:Enum_EstadoUsuario!
+    Rol : Enum_Rol!
+
+    ): Usuario
   }
 `;
  

@@ -43,7 +43,7 @@ const server = new ApolloServer({
       id_estudiante:'1017125412',
       fecha_egreso:"01/12/21",
       fecha_ingreso:"01/01/20",
-      estado:Enum_EstadoInscripcion.aceptada
+      estado:Enum_EstadoInscripcion.ACEPTADA
     }).then((u)=>{
     console.log("creado", u)
     }).catch((e)=>{

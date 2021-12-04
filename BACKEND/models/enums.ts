@@ -1,7 +1,7 @@
 enum Enum_EstadoInscripcion {
-    aceptada = "Aceptada",
-    rechazada = "Rechazada",
-    pendiente = "Pendiente"
+    ACEPTADA = "ACEPTADA",
+    RECHAZADA = "RECHAZADA",
+    PENDIENTE = "PENDIENTE"
 }
 
 export { Enum_EstadoInscripcion };

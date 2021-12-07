@@ -1,29 +1,20 @@
-import React from "react";
-import {Container, Row,Col} from "react-bootstrap";
+import React, { useState } from "react";
+import {Container, Row,Col,Button} from "react-bootstrap";
 import {BarNavegador} from '../../../NavBar';
 import {CardProyect} from "./CardProyect";
 import {useQuery, gql} from "@apollo/client";
+import algocorto from '../queries';
 
 export const ExplorarProyecto = ()=> {
-    const traerProyectos = gql`
-        query  {
-            AllProyectos {
-                Id_proyecto
-                Nombre_proyecto
-                Objetivo_general
-                Presupuesto
-                Objetivo_especifico
-                Fase_proyecto
-                Estado_proyecto
-                Documento
-                Apellidos
-                Nombres
-                Fecha_terminacion
-                Fecha_inicio
-            }
-            }`
-    const { data }= useQuery(traerProyectos);
-    console.log( data )
+    const [DatosShow, setDatosShow] = useState([]);
+    
+    const { data }= useQuery(algocorto[0]);
+    console.log( data );
+
+    const TraerTodos = ()=>{
+        const DataTodos = data?.AllProyectos
+        setDatosShow([...DataTodos])
+        }
     
     return(
         <>
@@ -32,8 +23,12 @@ export const ExplorarProyecto = ()=> {
             <Row className="mb-3">
             <h2 className="text-center"> Explorador de Proyectos</h2>
             </Row>
+            <Button  variant="success"  disabled={false} onClick={TraerTodos}>Buscar todos</Button>
+            <Button  variant="success"  disabled={false}>Buscar por ID Proyecto</Button>
+            <Button  variant="success"  disabled={false}>Buscar por ID Lider</Button>
+            
             <Row className="mb-3">
-            {data?.AllProyectos?.map((Proy)=>(
+            {DatosShow.map((Proy)=>(
                 <Col xs={6} key={Proy.Id_proyecto}>
                 <CardProyect Project={Proy}/>
                 </Col>

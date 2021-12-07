@@ -1,7 +1,7 @@
 /// conusltas necesarias para las interfaces de proyectos
-import {useQuery, gql} from "@apollo/client";
+import  {gql} from "@apollo/client";
 
-const traerProyectos = gql`
+const TraerProyectos = gql`
     query  {
         AllProyectos {
             Id_proyecto
@@ -17,7 +17,7 @@ const traerProyectos = gql`
             Fecha_terminacion
             Fecha_inicio
         }
-    }`
+    }`;
 
 const traerProyectoId  = gql`
     query ($idProyecto: Int) {
@@ -35,7 +35,7 @@ const traerProyectoId  = gql`
             Fecha_terminacion
             Fecha_inicio
         }
-    }`
+    }`;
 const traerProyectoxCC   = gql`
     query ($documento: Int) {
         ProyectoxCC(Documento: $documento) {
@@ -52,7 +52,7 @@ const traerProyectoxCC   = gql`
             Fecha_terminacion
             Fecha_inicio
         }
-    }`
+    }`;
 
 const modificarEstado   = gql`
     mutation EstadoProy($idProyecto: Int, $estadoProyecto: Estado_proyecto) {
@@ -62,4 +62,6 @@ const modificarEstado   = gql`
             Objetivo_general
             Objetivo_especifico
         }
-    }`
+    }`;
+
+    export default [TraerProyectos,traerProyectoId,traerProyectoxCC,modificarEstado];

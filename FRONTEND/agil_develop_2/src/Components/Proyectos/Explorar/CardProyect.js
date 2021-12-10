@@ -5,12 +5,27 @@ import { Card,Button,Row ,Col,Accordion,ButtonGroup} from "react-bootstrap";
 export const CardProyect = ({Project})=>{
     const [projectActivo, setProjectActivo] = useState(false)
 
+    var utcSeconds = parseInt(Project.Fecha_inicio);
+    function dateDisplayed(utcSeconds) {
+        var date = new Date(utcSeconds);
+        return (date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear());
+    }
+
     useEffect(() => {
     const valproject = ()=>{
         if (Project.Fase_proyecto !=="TERMINADO"){
         setProjectActivo(true)}}
     valproject()
+    
     }, []);
+
+    //var utcSeconds = Project.Fecha_inicio;
+    //console.log(utcSeconds)
+    //var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+    //const fechabien = dateDisplayed() //d.setUTCSeconds(utcSeconds);
+    //console.log(fechabien)
+
+    
 
     return (
         <>

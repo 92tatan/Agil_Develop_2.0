@@ -1,21 +1,44 @@
 import React, { useState } from "react";
-import {Container, Row,Col,Button} from "react-bootstrap";
+import {Container, Row,Col,Button,Form} from "react-bootstrap";
 import {BarNavegador} from '../../../NavBar';
 import {CardProyect} from "./CardProyect";
-import {useQuery, gql} from "@apollo/client";
-import algocorto from '../queries';
+import {useQuery} from "@apollo/client";
+import queries from '../queries';
 
 export const ExplorarProyecto = ()=> {
     const [DatosShow, setDatosShow] = useState([]);
-    
-    const { data }= useQuery(algocorto[0]);
-    console.log( data );
-
+    const [IDPrbuscado, setIDPrbuscado] = useState({IdProyecto:0});
+    const [IDLider, setIDLider] = useState({Documento:0});
+    /// HU006 y HU019
+    const  data1 = useQuery(queries[0]).data;
     const TraerTodos = ()=>{
-        const DataTodos = data?.AllProyectos
+        const DataTodos = data1?.AllProyectos
+        console.log(DataTodos)
         setDatosShow([...DataTodos])
         }
-    
+    /// HU017
+    const changeinputProyecto = (event)=>{
+        setIDPrbuscado({...IDPrbuscado,[event.target.name]:parseInt(event.target.value)});
+        console.log(IDPrbuscado)
+        };
+    const data2 = useQuery(queries[1],{variables: {idProyecto:IDPrbuscado.IdProyecto}}).data;
+    const TraerXId = ()=>{
+        const DataxId = data2?.ProyectoxId
+        console.log(DataxId)
+        setDatosShow([DataxId])
+        }
+    /// HU013
+    const changeinputLider = (event)=>{
+        setIDLider({...IDLider,[event.target.name]:parseInt(event.target.value)});
+        console.log(IDLider)
+        };
+    const data3 = useQuery(queries[2],{variables: {documento:IDLider.Documento}}).data;
+    const TraerXIdLider = ()=>{
+        const DataxIdL = data3?.ProyectoxCC
+        console.log(DataxIdL)
+        setDatosShow([...DataxIdL])
+        }
+        
     return(
         <>
         <BarNavegador />
@@ -23,10 +46,32 @@ export const ExplorarProyecto = ()=> {
             <Row className="mb-3">
             <h2 className="text-center"> Explorador de Proyectos</h2>
             </Row>
-            <Button  variant="success"  disabled={false} onClick={TraerTodos}>Buscar todos</Button>
-            <Button  variant="success"  disabled={false}>Buscar por ID Proyecto</Button>
-            <Button  variant="success"  disabled={false}>Buscar por ID Lider</Button>
             
+            <Col xs={3}>
+            <Button  variant="success"  disabled={false} onClick={TraerTodos}>Buscar todos</Button>
+            </Col><br />
+            <Row className="mb-3">
+            <Col xs={3}>
+            <Form.Label>ID Proyecto</Form.Label>
+            <Form.Control 
+                className="mb-2"
+                type="number" 
+                placeholder="Ingresa Número Proyecto" 
+                name="IdProyecto"
+                onChange={changeinputProyecto} />
+            <Button  variant="success"  disabled={false} onClick={TraerXId} >Buscar por ID Proyecto</Button>
+            </Col ><br />
+            <Col xs={3}>
+            <Form.Label>ID Lider</Form.Label>
+            <Form.Control 
+                className="mb-2"
+                type="number" 
+                placeholder="Ingresa Id Lider" 
+                name="Documento"
+                onChange={changeinputLider} />
+            <Button  variant="success"  disabled={false} onClick={TraerXIdLider}>Buscar por ID Lider</Button>
+            </Col></Row><br /><br />
+
             <Row className="mb-3">
             {DatosShow.map((Proy)=>(
                 <Col xs={6} key={Proy.Id_proyecto}>

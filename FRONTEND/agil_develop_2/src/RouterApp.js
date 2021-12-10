@@ -2,7 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Route } from "react-router-dom";
 import {Home} from './Components/ModuloHome/Home';
 import {Login} from './Components/Login';
-import {RegistroProyecto} from './Components/Proyectos/RegistroProyectos';
+import {RegistroProyecto} from './Components/Proyectos/Registro/RegistroProyectos';
 import {ExplorarProyecto} from './Components/Proyectos/Explorar/ExplorarProyectos';
 import {ActualizarProyecto} from './Components/Proyectos/Actualizar/ActualizarProyectos';
 import {InscripcionProyecto} from './Components/Inscripciones/InscripcionProyectos';

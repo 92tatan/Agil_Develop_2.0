@@ -64,4 +64,48 @@ const modificarEstado   = gql`
         }
     }`;
 
-    export default [TraerProyectos,traerProyectoId,traerProyectoxCC,modificarEstado];
+const crearProyecto = gql`
+    mutation (
+        $idProyecto: Int, 
+        $nombreProyecto: String, 
+        $objetivoGeneral: String, 
+        $objetivoEspecifico: String, 
+        $presupuesto: Float, 
+        $fechaInicio: String, 
+        $fechaTerminacion: String, 
+        $nombres: String, 
+        $apellidos: String, 
+        $documento: Int, 
+        $estadoProyecto: Estado_proyecto, 
+        $faseProyecto: Fase_proyecto) {
+    CrearProy(
+        Id_proyecto: $idProyecto, Nombre_proyecto: $nombreProyecto, 
+        Objetivo_general: $objetivoGeneral, Objetivo_especifico: $objetivoEspecifico, 
+        Presupuesto: $presupuesto, Fecha_inicio: $fechaInicio, Fecha_terminacion: $fechaTerminacion, 
+        Nombres: $nombres, Apellidos: $apellidos, Documento: $documento, 
+        Estado_proyecto: $estadoProyecto, Fase_proyecto: $faseProyecto) {
+            Id_proyecto
+            Nombre_proyecto
+            Objetivo_general
+            Presupuesto
+            Objetivo_especifico
+            Fase_proyecto
+            Estado_proyecto
+            Documento
+            Apellidos
+            Nombres
+            Fecha_terminacion
+            Fecha_inicio
+    
+    }
+}
+
+`;
+
+    export default [
+        TraerProyectos,
+        traerProyectoId,
+        traerProyectoxCC,
+        modificarEstado,
+        crearProyecto
+    ];

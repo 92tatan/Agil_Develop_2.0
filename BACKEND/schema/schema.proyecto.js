@@ -9,7 +9,7 @@ const tipoProyecto = gql`
     Objetivo_especifico: String!
     Presupuesto: Float!
     Fecha_inicio: String!
-    Fecha_terminacion: String!
+    Fecha_terminacion: String
     Nombres: String!
     Apellidos: String!
     Documento:Int!
@@ -55,7 +55,7 @@ type Mutation {
 }
 
 type Mutation {
-    CrearProy(Id_proyecto:Int, Nombre_proyecto:String, Objetivo_general:String, Objetivo_especifico:String, Presupuesto:Float, Fecha_inicio:String, Fecha_terminacion:String, Nombres:String, Apellidos:String, Documento:Int, Estado_proyecto:Estado_proyecto, Fase_proyecto:Fase_proyecto): Proyecto
+    CrearProy(Id_proyecto:Int, Nombre_proyecto:String, Objetivo_general:String, Objetivo_especifico:String, Presupuesto:Float, Fecha_inicio:Int, Fecha_terminacion:Int, Nombres:String, Apellidos:String, Documento:Int, Estado_proyecto:Estado_proyecto, Fase_proyecto:Fase_proyecto): Proyecto
 }
 
 type Mutation {

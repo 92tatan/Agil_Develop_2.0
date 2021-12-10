@@ -1,6 +1,6 @@
-import { userModel } from "../models/user"; // mucho cuidado con el punto
-import { inscriptionModel } from "../models/inscription";
-import { Enum_EstadoInscripcion } from "../models/enums";
+import { userModel } from "../models/user.js"; // mucho cuidado con el punto
+import { inscriptionModel } from "../models/inscription.js";
+//import { Enum_EstadoInscripcion } from "../models/enums.js";
 
 const resolvers = {
     Query:{

@@ -1,17 +1,18 @@
 "use strict";
-const express = require('express');
+import express from 'express';
+//const express = require('express');
 const app = express();
 const port = process.env.PORT || 3002;
 
-import { isConstructorDeclaration } from "typescript";
-import { Enum_EstadoInscripcion } from "./models/enums";
-import { inscriptionModel } from "./models/inscription";
+//import { isConstructorDeclaration } from "typescript";
+
+import { inscriptionModel } from "./models/inscription.js";
 import cors from 'cors';
 import { ApolloServer } from 'apollo-server-express';
 import dotenv from 'dotenv'
-import conectarBD from "./db/db"
-import { typeDefs } from "./graphql/types";
-import { resolvers } from "./graphql/resolvers";
+import conectarBD from "./db/db.js"
+import { typeDefs } from "./graphql/types.js";
+import { resolvers } from "./graphql/resolvers.js";
 
 // Conexion a BDs
 //const mongoose = require("mongoose");
@@ -37,19 +38,7 @@ const server = new ApolloServer({
 
 
 
-  const main = async () =>{
-    await inscriptionModel.create({
-      id_proyecto:'7',
-      id_estudiante:'1017125412',
-      fecha_egreso:"01/12/21",
-      fecha_ingreso:"01/01/20",
-      estado:Enum_EstadoInscripcion.ACEPTADA
-    }).then((u)=>{
-    console.log("creado", u)
-    }).catch((e)=>{
-      console.log("error al crear", e)
-    });
-  }
+ 
 
   
 
@@ -75,15 +64,14 @@ app.listen({ port: process.env.PORT || 3002 }, async () => {
 });
 
 // Rutas de test
-app.use("/test", require("./router/Routertest"));
+//app.use("/test", require("./router/Routertest"));
 //app.use('/test',response('./router/Routertest'));
 
 // Rutas de web para proyectos
-app.use("/proyectos", require("./router/Proyectos"));
+//app.use("/proyectos", require("./router/Proyectos"));
 
 // Rutas de web para Inscripciones
-app.use("/inscripciones", require("./router/Inscripciones"));
+//app.use("/inscripciones", require("./router/Inscripciones"));
 
-//main ();
 
 

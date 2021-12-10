@@ -10,7 +10,7 @@ const resolvers = {
             return users;
         },
         Inscripciones: async (parent, args) => {
-            const inscripciones = await inscriptionModel.find();
+            const inscripciones = await inscriptionModel.find().populate('id_estudiante');
             console.log("Inscripciones Consultadas OK ");
             return inscripciones;
             

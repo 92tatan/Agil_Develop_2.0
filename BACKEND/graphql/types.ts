@@ -46,7 +46,7 @@ const typeDefs = gql`
         apellido:String!
         telefono:String!
         correo:String!
-        rol: Enum_RolUsuario
+        rol: Usuario
     }    
 
     

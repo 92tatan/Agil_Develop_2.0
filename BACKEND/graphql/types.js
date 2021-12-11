@@ -5,7 +5,7 @@ const typeDefs = gql`
     scalar Date
 
     type Query{
-        InscripcionPorId(_id:String!):[Inscripcion]
+        InscripcionPorId(_id:String!):Inscripcion
         Inscripciones:[Inscripcion] 
         Usuarios:[Usuario]
     }

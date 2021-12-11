@@ -35,7 +35,7 @@ export const ExplorarInscripcion = () => {
             data.AllInscripciones.map((u) => {
               return (
                 <tr key={u._id}>
-                  <td>{u._id}</td>
+                  <td>{u.Id_inscripcion}</td>
                   <td>{u.Id_proyecto}</td>
                   <td>{u.Documento}</td>
                   <td>{u.Estado_inscripcion}</td>

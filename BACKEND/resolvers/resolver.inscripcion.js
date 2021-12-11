@@ -14,6 +14,8 @@ const InscripcionObj = async(parent, args) => {
     return  inscripcion;
 };
 
+
+
 // Busqueda de inscripcion por Id
 const InscripcionesxId = async (parent,args) => {
     console.log(`Id de inscripcion ${args.Id_inscripcion}`)
@@ -60,6 +62,7 @@ export default {
     Queriesinscripcion: {
         AllInscripciones,
         InscripcionesxId,
+        InscripcionObj,
     },
     Mutationsinscripcion:{
         CrearInsc,

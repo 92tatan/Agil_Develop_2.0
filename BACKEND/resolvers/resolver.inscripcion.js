@@ -7,6 +7,13 @@ const AllInscripciones = async () => {
     return inscripciones;
 };
 
+// Busqueda Alternativa por uno
+const InscripcionObj = async(parent, args) => {
+     const inscripcion =  await Inscripcion.findOne({_id:args._id});
+    console.log("Inscripcion Encontrada OK")
+    return  inscripcion;
+};
+
 // Busqueda de inscripcion por Id
 const InscripcionesxId = async (parent,args) => {
     console.log(`Id de inscripcion ${args.Id_inscripcion}`)

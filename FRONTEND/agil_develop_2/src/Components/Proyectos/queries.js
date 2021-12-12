@@ -83,7 +83,8 @@ const crearProyecto = gql`
         Objetivo_general: $objetivoGeneral, Objetivo_especifico: $objetivoEspecifico, 
         Presupuesto: $presupuesto, Fecha_inicio: $fechaInicio, Fecha_terminacion: $fechaTerminacion, 
         Nombres: $nombres, Apellidos: $apellidos, Documento: $documento, 
-        Estado_proyecto: $estadoProyecto, Fase_proyecto: $faseProyecto) {
+        Estado_proyecto: $estadoProyecto, Fase_proyecto: $faseProyecto) 
+        {
             Id_proyecto
             Nombre_proyecto
             Objetivo_general

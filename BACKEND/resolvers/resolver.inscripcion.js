@@ -7,12 +7,12 @@ const AllInscripciones = async () => {
     return inscripciones;
 };
 
-// Busqueda Alternativa por uno
-const InscripcionObj = async(parent, args) => {
+// Busqueda Alternativa por uno  NO SE USA
+/* const InscripcionObj = async(parent, args) => {
      const inscripcion =  await Inscripcion.findOne({_id:args._id});
     console.log("Inscripcion Encontrada OK")
     return  inscripcion;
-};
+}; */
 
 
 
@@ -62,7 +62,7 @@ export default {
     Queriesinscripcion: {
         AllInscripciones,
         InscripcionesxId,
-        InscripcionObj,
+        
     },
     Mutationsinscripcion:{
         CrearInsc,

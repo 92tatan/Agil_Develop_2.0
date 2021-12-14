@@ -29,7 +29,7 @@ export const RutasNavegacion = () => {
         <Route exact path="/Perfil" component={Perfil} />
         <Route
           exact
-          path="/Inscripcion_Proyectos/:_id"
+          path="/Inscripcion_Proyectos/:id"
           component={InscripcionProyecto}
         />
         <Route

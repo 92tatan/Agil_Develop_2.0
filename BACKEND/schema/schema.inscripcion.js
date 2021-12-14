@@ -3,7 +3,6 @@ import  gql from 'graphql-tag';
 const tipoInscripcion = gql`
     # Inscripcion
     type Inscripcion {
-    _id: ID!
     Id_inscripcion:Int!
     Id_proyecto:Int!
     Documento:Int!
@@ -36,9 +35,6 @@ type Query {
     InscripcionesxId(Id_inscripcion:Int): Inscripcion
 }
 
-type Query{    
-    InscripcionObj(_id:String!):Inscripcion
-}
 
 `;
 

@@ -55,7 +55,6 @@ type Query {
       Apellidos : String
       Documento : Int
       Email : String
-      Rol : Rol
       Password : String
     ): Usuario
     

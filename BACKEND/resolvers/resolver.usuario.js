@@ -37,14 +37,14 @@ const crearUsuario =  async (parent, args) =>{
 
 const editarUsuario = async (parent, args) =>{
     const modificarUsuario = await Usuarios.findOneAndUpdate(args._id,{
-    Nombres: args.Nombres,
-    Apellidos : args.Apellidos,
-    Documento : args.Documento,
-    Email : args.Email,
-    Rol : args.Rol,
-    Password : args.Password,
-    });
-    return modificarUsuario;
+        Nombres: args.Nombres,
+        Apellidos : args.Apellidos,
+        Documento : args.Documento,
+        Email : args.Email,
+        Status: args.Status,
+        Password : args.Password,
+        });
+        return modificarUsuario;
 
 };
 const ModificarEstadoUsuario = async (parent, args) => {

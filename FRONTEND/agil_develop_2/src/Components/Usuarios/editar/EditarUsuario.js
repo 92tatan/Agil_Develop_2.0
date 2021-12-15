@@ -8,6 +8,15 @@ import queries from '../queries';
 export const EditarUsuario = ()=> {
     const [UsuGuardar, setUsuGuardar]= useState({});
 
+     const [editUsuario] = useMutation(queries[3],{variables: {
+              Nombres: UsuGuardar.NombreUsuario,  
+               Apellidos: UsuGuardar.ApellidoUsuario, 
+               Documento: parseInt(UsuGuardar.id), 
+               Email: UsuGuardar.Correo, 
+               Password: UsuGuardar.contraseña
+            
+            }}) 
+
 
     const editarUsu = ()=>{
         

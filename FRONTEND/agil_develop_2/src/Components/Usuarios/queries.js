@@ -67,20 +67,17 @@ const editarUsuario = gql`
     $Apellidos: String, 
     $Documento: Int,
     $Email : String, 
-    $Rol: Rol
     $Password: String){
     editarUsuario(
       Nombres: $Nombres, 
       Apellidos: $Apellidos, 
       Documento: $Documento, 
       Email: $Email,
-      Rol: $Rol,
       Password: $Password){
         Nombres
         Apellidos 
         Documento 
         Email 
-        Rol
         Password 
 
       }

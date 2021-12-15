@@ -9,8 +9,10 @@ import {InscripcionProyecto} from './Components/Inscripciones/InscripcionProyect
 import {ExplorarInscripcion} from './Components/Inscripciones/ExplorarInscripciones';
 import {RegistrarAvance} from './Components/Avances/RegistrarAvances';
 import {ExplorarAvance} from './Components/Avances/ExplorarAvances';
-import {Perfil} from './Components/Usuarios/Perfil';
+import { CrearUsuario } from "./Components/Usuarios/crear/CrearUsuario";
+import {EditarUsuario} from './Components/Usuarios/editar/EditarUsuario';
 import {EstadoUsuario} from './Components/Usuarios/EstadoUsuario';
+
 
 
 export const RutasNavegacion = ()=> {
@@ -48,11 +50,18 @@ export const RutasNavegacion = ()=> {
                 path="/Estado_Usuario"
                 component={EstadoUsuario}
             />
+
             <Route
                 exact
-                path="/Perfil"
-                component={Perfil}
+                path="/Crear_Usuario"
+                component={CrearUsuario}
             />
+            <Route
+                exact
+                path="/perfil"
+                component={EditarUsuario}
+            />
+           
             <Route
                 exact
                 path="/Inscripcion_Proyectos"

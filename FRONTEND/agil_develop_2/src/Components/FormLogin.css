@@ -1,0 +1,19 @@
+.login-container{
+    margin-top: 8%;
+}
+
+.form-control {
+    /* background-color: grey !important; */
+    border: black  !important;
+}
+
+body {
+    color: rgb(36, 20, 63) !important;
+}
+
+.link {
+    text-decoration: none;
+}
+.login{
+    width: 100%;
+}

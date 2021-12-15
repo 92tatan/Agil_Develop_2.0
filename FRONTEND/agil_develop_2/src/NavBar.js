@@ -26,6 +26,7 @@ export const BarNavegador = ()=>{
         <DropdownButton variant="secondary" menuVariant="dark" title="Gestión Usuarios" className="mt-2" >
             <Dropdown.Item href="/Estado_Usuario">Estado Usuario</Dropdown.Item>
             <Dropdown.Item href="/Perfil">Perfil</Dropdown.Item>
+            <Dropdown.Item href="/crear_Usuario">Crear Usuario</Dropdown.Item>
         </DropdownButton>
         <NavDropdown.Divider />
         <DropdownButton variant="secondary" menuVariant="dark" title="Gestión Proyectos" className="mt-2" >

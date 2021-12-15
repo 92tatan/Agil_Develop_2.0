@@ -7,7 +7,6 @@ export const Formulario = ({ProyGuardar, setProyGuardar})=>{
     
     const  data1 = useQuery(queries[0]).data;
     
-
     const buscartodos = ()=>{
         const DataTodos = data1?.AllProyectos
         const ultimo = DataTodos[50].Id_proyecto+1
@@ -45,9 +44,10 @@ export const Formulario = ({ProyGuardar, setProyGuardar})=>{
                 <Form.Control
                 type="text"
                 placeholder=" Número Proyecto Automatico "
-                disabled
+                //disabled
                 name="Id_proyecto"
-                value= {ultimoId}
+                //value= {ultimoId}
+                onChange ={changeinput}
                 />
             </Form.Group>
         </Row>
@@ -97,7 +97,7 @@ export const Formulario = ({ProyGuardar, setProyGuardar})=>{
                 <Form.Select aria-label="Default select example" name="Fase_proyecto" onChange ={changeinput}>
                 <option>Default Null</option>
                 <option value="INICIADO">Iniciado</option>
-                <option value="EN DESARROLLO">En Desarrollo</option>
+                <option value="EN_PROGRESO">En Progreso</option>
                 <option value="TERMINADO">Terminado</option>
                 </Form.Select>
             </Form.Group>

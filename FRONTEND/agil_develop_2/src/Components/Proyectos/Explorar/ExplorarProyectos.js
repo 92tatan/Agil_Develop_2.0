@@ -5,6 +5,8 @@ import {CardProyect} from "./CardProyect";
 import {useQuery} from "@apollo/client";
 import queries from '../queries';
 
+
+
 export const ExplorarProyecto = ()=> {
     const [DatosShow, setDatosShow] = useState([]);
     const [IDPrbuscado, setIDPrbuscado] = useState({IdProyecto:0});

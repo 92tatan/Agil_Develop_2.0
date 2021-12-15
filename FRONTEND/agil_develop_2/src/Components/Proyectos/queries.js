@@ -55,12 +55,38 @@ const traerProyectoxCC   = gql`
     }`;
 
 const modificarEstado   = gql`
-    mutation EstadoProy($idProyecto: Int, $estadoProyecto: Estado_proyecto) {
+    mutation ($idProyecto: Int, $estadoProyecto: Estado_proyecto) {
         EstadoProy(Id_proyecto: $idProyecto, Estado_proyecto: $estadoProyecto) {
             Id_proyecto
             Nombre_proyecto
             Objetivo_general
+            Presupuesto
             Objetivo_especifico
+            Fase_proyecto
+            Estado_proyecto
+            Documento
+            Apellidos
+            Nombres
+            Fecha_terminacion
+            Fecha_inicio
+        }
+    }`;
+
+const modificarFase   = gql`
+    mutation ($idProyecto: Int, $faseProyecto: Fase_proyecto) {
+        FaseProy(Id_proyecto: $idProyecto, Fase_proyecto: $faseProyecto) {
+        Id_proyecto
+        Nombre_proyecto
+        Objetivo_general
+        Objetivo_especifico
+        Presupuesto
+        Fecha_inicio
+        Fecha_terminacion
+        Nombres
+        Apellidos
+        Documento
+        Estado_proyecto
+        Fase_proyecto
         }
     }`;
 
@@ -83,7 +109,8 @@ const crearProyecto = gql`
         Objetivo_general: $objetivoGeneral, Objetivo_especifico: $objetivoEspecifico, 
         Presupuesto: $presupuesto, Fecha_inicio: $fechaInicio, Fecha_terminacion: $fechaTerminacion, 
         Nombres: $nombres, Apellidos: $apellidos, Documento: $documento, 
-        Estado_proyecto: $estadoProyecto, Fase_proyecto: $faseProyecto) {
+        Estado_proyecto: $estadoProyecto, Fase_proyecto: $faseProyecto) 
+        {
             Id_proyecto
             Nombre_proyecto
             Objetivo_general
@@ -107,5 +134,6 @@ const crearProyecto = gql`
         traerProyectoId,
         traerProyectoxCC,
         modificarEstado,
-        crearProyecto
+        crearProyecto,
+        modificarFase
     ];

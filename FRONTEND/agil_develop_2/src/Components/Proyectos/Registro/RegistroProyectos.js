@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {BarNavegador} from '../../../NavBar';
 import {Row,  Col,  Container,   Form,  Button,  Placeholder,InputGroup} from "react-bootstrap";
-import {useQuery} from "@apollo/client";
+import {useMutation, useQuery} from "@apollo/client";
 import queries from '../queries';
 import {Formulario} from './FormaDatos'
 
@@ -20,20 +20,30 @@ export const RegistroProyecto = ()=> {
         buscarultimo()
         buscarultimo()
     }, []); */
-
+    const [addProyecto] = useMutation(queries[4],{variables: {
+        idProyecto: parseInt(ProyGuardar.Id_proyecto), 
+        nombreProyecto: ProyGuardar.Nombre_proyecto, 
+        objetivoGeneral: ProyGuardar.Objetivo_general, 
+        objetivoEspecifico: ProyGuardar.Objetivo_especifico, 
+        presupuesto: parseFloat(ProyGuardar.Presupuesto), 
+        fechaInicio: ProyGuardar.Fecha_inicio, 
+        fechaTerminacion: ProyGuardar.Fecha_terminacion, 
+        nombres: ProyGuardar.Nombres, 
+        apellidos: ProyGuardar.Apellidos, 
+        documento: parseInt(ProyGuardar.Documento), 
+        estadoProyecto: ProyGuardar.Estado_proyecto, 
+        faseProyecto: ProyGuardar.Fase_proyecto
+        }}) 
 
     const registrarProyecto = ()=>{
         console.log(ProyGuardar);
-        ///validacion fase terminada a estado inactivo
+        //validacion fase terminada a estado inactivo
         if (ProyGuardar.Fase_proyecto==="TERMINADO"){
             ProyGuardar.Estado_proyecto="INACTIVO"
             }
-        ProyGuardar.Documento=parseInt(ProyGuardar.Documento)
-        //ProyGuardar.Id_proyecto=parseInt(ProyGuardar.Id_proyecto)
-        ProyGuardar.Presupuesto=parseFloat(ProyGuardar.Presupuesto)
-        ProyGuardar.Fecha_inicio="06/01/2022"
-
         console.log(ProyGuardar);
+        addProyecto()
+        console.log(addProyecto.data);
         }
         useEffect(() => {
         

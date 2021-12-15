@@ -3,12 +3,12 @@ import  gql from 'graphql-tag';
 const tipoAvance = gql`
     # Avance
     type Avance {
-    Id_avance:Int!
-    Id_proyecto:Int!
-    Documento:Int!
-    Fecha_avance: String!
-    DescripciOn_avance: String!
-    Observaciones_lider: String!
+    Id_avance:Int
+    Id_proyecto:Int
+    Documento:Int
+    Fecha_avance: String
+    DescripciOn_avance: String
+    Observaciones_lider: String
 }
 `;
 
@@ -19,7 +19,7 @@ type Query {
 }
 
 type Query {
-    AvancesxProyecto(Id_proyecto:Int): Avance
+    AvancesxProyecto(Id_proyecto:Int): [Avance]
 }
 
 `;

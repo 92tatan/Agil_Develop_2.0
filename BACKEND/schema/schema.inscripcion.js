@@ -3,11 +3,11 @@ import  gql from 'graphql-tag';
 const tipoInscripcion = gql`
     # Inscripcion
     type Inscripcion {
-    Id_inscripcion:Int!
-    Id_proyecto:Int!
-    Documento:Int!
-    Estado_inscripcion:Estado_inscripcion!
-    Fecha_ingreso: String!
+    Id_inscripcion:Int
+    Id_proyecto:Int
+    Documento:Int
+    Estado_inscripcion:Estado_inscripcion
+    Fecha_ingreso: String
     Fase_proyecto: Fase_proyecto
     Fecha_egreso: String
 }

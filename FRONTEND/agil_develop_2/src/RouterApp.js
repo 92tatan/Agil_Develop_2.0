@@ -10,7 +10,7 @@ import {ExplorarInscripcion} from './Components/Inscripciones/ExplorarInscripcio
 import {RegistrarAvance} from './Components/Avances/RegistrarAvances';
 import {ExplorarAvance} from './Components/Avances/ExplorarAvances';
 import { CrearUsuario } from "./Components/Usuarios/crear/CrearUsuario";
-import {Perfil} from './Components/Usuarios/Perfil';
+import {EditarUsuario, Perfil} from './Components/Usuarios/editar/EditarUsuario';
 import {EstadoUsuario} from './Components/Usuarios/EstadoUsuario';
 
 
@@ -59,7 +59,7 @@ export const RutasNavegacion = ()=> {
             <Route
                 exact
                 path="/Perfil"
-                component={Perfil}
+                component={EditarUsuario}
             />
            
             <Route

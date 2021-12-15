@@ -7,10 +7,10 @@ type Usuario{
     Nombres: String
     Apellidos : String
     Documento : Int
-    Email : String!
-    Rol : Rol!
-    Status : Estado_usuario!
-    Password : String!
+    Email : String
+    Rol : Rol
+    Status : Estado_usuario
+    Password : String
    
   }
   `;
@@ -41,32 +41,30 @@ type Query {
   const mutations = gql`
   type Mutation{
     crearUsuario(
-    Nombres: String!
-    Apellidos : String!
-    Documento : Int!
-    Email : String!
-    Status: Estado_usuario!
-    Rol : Rol!
-    Password : String!
+    Nombres: String
+    Apellidos : String
+    Documento : Int
+    Email : String
+    Rol : Rol
+    Password : String
     ): Usuario
     
     editarUsuario(
-      _id : String!
-      Nombres: String!
-      Apellidos : String!
-      Documento : Int!
-      Email : String!
-      Status: Estado_usuario!
-      Rol : Rol!
-      Password : String!
+      
+      Nombres: String
+      Apellidos : String
+      Documento : Int
+      Email : String
+      Rol : Rol
+      Password : String
     ): Usuario
     
     ModificarEstadoUsuario
-    (Status: String,Estado_usuario:Estado_usuario
+    (Documento:Int, Status:Estado_usuario
     ): Usuario
     
     login
-    (Email: String!, Password: String!
+    (Email: String, Password: String
     ): String
     
    

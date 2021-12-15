@@ -1,30 +1,50 @@
-import React from "react";
-import {BarNavegador} from '../../NavBar';
-import { useEffect } from "react";
-import {Row,  Col,  Container,  Table,  Form,  Button,  Placeholder,} from "react-bootstrap";
+import React, { useState , useEffect } from "react";
+import {Row,  Col,  Container,   Form,  Button,  Placeholder,InputGroup} from "react-bootstrap";
+import {useQuery} from "@apollo/client";
+import queries from '../queries';
+
+export const FormaEditarUsuario = ({UsuGuardar, setUsuGuardar}) =>{
+
+    const changeinput = (event)=> {
+        setUsuGuardar({...UsuGuardar,[event.target.name]:event.target.value})};
 
 
-export const Perfil = ()=> {
-    return(
-        <Container className="perfil-container">
+
+
+    return (
+          <Container className="perfil-container">
           <Row className="justify-content-md-center">
           <Col xl={15} className="perfil-form"></Col>
         <div>
-        <BarNavegador />
+        
         <h2 className="text-left mt-5" >Detalles de Usuario </h2>
         </div>
 
         <Row className="justify-content-md-center">
-        <center><h5><Form.Label  className="text-center" > Nombre Completo</Form.Label> </h5></center>
+        <center><h5><Form.Label  className="text-center" > Nombres</Form.Label> </h5></center>
             <Form.Group xs ={6} as={Col}  className="mb" controlId="formGroupCode">
               <Form.Control 
-                type="number" 
+                type="text" 
                 placeholder="Escriba un nombre" 
                 name="NombreUsuario" 
+                onChange ={changeinput}
                 
                  />
             </Form.Group>   
             </Row>  
+        
+        <Row className="justify-content-md-center">
+        <center><h5><Form.Label  className="text-center" > Apellidos</Form.Label> </h5></center>
+         <Form.Group xs ={6} as={Col}  className="mb" controlId="formGroupCode">
+            <Form.Control 
+              type="text" 
+              placeholder="Apellidos" 
+              name="ApellidoUsuario" 
+              onChange ={changeinput}
+              
+               />
+          </Form.Group> 
+          </Row>    
         <Row className="justify-content-md-center">
             <center><h5><Form.Label >Correo Electrónico</Form.Label></h5></center>
              <Form.Group xs ={6} as={Col} className="mb" controlId="formGroupDescription">
@@ -33,6 +53,7 @@ export const Perfil = ()=> {
                 placeholder="Correo electrónico" 
                 abled 
                 name="Correo"  
+                onChange ={changeinput}
                 />    
             </Form.Group>
             </Row>  
@@ -47,6 +68,7 @@ export const Perfil = ()=> {
                     abled 
                     name="Id"  
                     abled
+                    onChange ={changeinput}
                     />  
             </Form.Group> 
             </Row>  
@@ -60,6 +82,7 @@ export const Perfil = ()=> {
                 abled 
                 name="contrasena"  
                 abled
+                onChange ={changeinput}
                 />  
             </Form.Group> 
 
@@ -90,10 +113,6 @@ export const Perfil = ()=> {
 
 
 
-        </Container>         
-
-        
-    )
-
-
+        </Container>
+        )
 }

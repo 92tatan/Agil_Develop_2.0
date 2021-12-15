@@ -13,6 +13,7 @@ import {Perfil} from './Components/Usuarios/Perfil';
 import {EstadoUsuario} from './Components/Usuarios/EstadoUsuario';
 
 
+
 export const RutasNavegacion = ()=> {
 
     return(
@@ -53,6 +54,7 @@ export const RutasNavegacion = ()=> {
                 path="/Perfil"
                 component={Perfil}
             />
+           
             <Route
                 exact
                 path="/Inscripcion_Proyectos"

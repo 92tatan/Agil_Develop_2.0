@@ -3,8 +3,8 @@ import  gql from 'graphql-tag';
 
 const tipoUsuario = gql`
 type Usuario{
-    _id: ID!
-    Nombres: String!
+    
+    Nombres: String
     Apellidos : String
     Documento : Int
     Email : String!

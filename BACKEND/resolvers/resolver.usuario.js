@@ -21,12 +21,13 @@ const UsuarioxId = async (parent,args) => {
 
 
 const crearUsuario =  async (parent, args) =>{
+        const esta = "PENDIENTE"
         const usuarioCreado = await Usuarios.create({
             Nombres: args.Nombres,
             Apellidos : args.Apellidos,
             Documento : args.Documento,
             Email : args.Email,
-            Status: args.Status,
+            Status: esta,
             Rol : args.Rol,
             Password : args.Password,
 
@@ -36,20 +37,19 @@ const crearUsuario =  async (parent, args) =>{
 
 const editarUsuario = async (parent, args) =>{
     const modificarUsuario = await Usuarios.findOneAndUpdate(args._id,{
-    Nombres: args.Nombres,
-    Apellidos : args.Apellidos,
-    Documento : args.Documento,
-    Email : args.Email,
-    Status: args.Status,
-    Rol : args.Rol,
-    Password : args.Password,
-    });
-    return modificarUsuario;
+        Nombres: args.Nombres,
+        Apellidos : args.Apellidos,
+        Documento : args.Documento,
+        Email : args.Email,
+        Status: args.Status,
+        Password : args.Password,
+        });
+        return modificarUsuario;
 
 };
 const ModificarEstadoUsuario = async (parent, args) => {
-    const Modifuser = await Usuarios.findOneAndUpdate({Status:args.Status},{$set:{Estado_usuario:args.Estado_usuario}},{new:true});
-    console.log(`Estado de usuario ${args.Status} modificado a ${args.Estado_usuario}` );
+    const Modifuser = await Usuarios.findOneAndUpdate({Documento:args.Documento},{$set:{Status:args.Estado_usuario}},{new:true});
+    console.log(`Estado de usuario ${args.Documento} modificado a ${args.Estado_usuario}` );
     return Modifuser;
 };
 

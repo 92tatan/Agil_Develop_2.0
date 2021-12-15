@@ -36,8 +36,8 @@ const crearUsuario= gql`
          
         $Nombres: String, 
         $Apellidos: String, 
-        $Documento: Int, 
-        $Status: Estado_Usuario,
+        $Documento: Int,
+        $Email : String,
         $Rol: Rol,
         $Password: String,) {
     CrearUsuario(
@@ -45,7 +45,6 @@ const crearUsuario= gql`
         Apellidos: $Apellidos, 
         Documento: $Documento, 
         Email : $Email,
-        Status: $Estado_usuario,
         Rol : $Rol,
         Password: $Password) 
         {
@@ -55,7 +54,6 @@ const crearUsuario= gql`
           Documento 
           Email 
           Rol
-          Status
           Password
         }
                  
@@ -67,24 +65,19 @@ const editarUsuario = gql`
     
     $Nombres: String, 
     $Apellidos: String, 
-    $Documento: Int, 
-    $Status: Estado_Usuario,
-    $Rol: Rol,
+    $Documento: Int,
+    $Email : String, 
     $Password: String){
     editarUsuario(
       Nombres: $Nombres, 
       Apellidos: $Apellidos, 
       Documento: $Documento, 
       Email: $Email,
-      Status: $Estado_usuario,
-      Rol: $Rol,
       Password: $Password){
         Nombres
         Apellidos 
         Documento 
         Email 
-        Rol
-        Status
         Password 
 
       }

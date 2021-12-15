@@ -9,21 +9,21 @@ import queries from '../queries';
 export const CrearUsuario = ()=> {
     const [UsuGuardar, setUsuGuardar]= useState({});
     
-    const [addUsuario] = useMutation(queries[2],{variables: {
-        Nombres: UsuGuardar.NombreUsuario,  
-        Apellidos: UsuGuardar.ApellidoUsuario, 
-        Documento: parseInt(UsuGuardar.Usuarioid), 
-        Email: UsuGuardar.Correo, 
-        Rol: UsuGuardar.Rol, 
-        Status: "PENDIENTE",
-        Password: UsuGuardar.contraseña
+    //  const [addUsuario] = useMutation(queries[2],{variables: {
+    //      Nombres: UsuGuardar.NombreUsuario,  
+    //      Apellidos: UsuGuardar.ApellidoUsuario, 
+    //      Documento: parseInt(UsuGuardar.Usuarioid), 
+    //      Email: UsuGuardar.Correo, 
+    //      Rol: UsuGuardar.Rol, 
+    //      Password: UsuGuardar.contraseña
         
-        }}) 
+    //   }}) 
 
 
     const crearUsu = ()=>{
+        //console.log(UsuGuardar)
+        //addUsuario()
         console.log(UsuGuardar)
-        addUsuario()
     };
 
     

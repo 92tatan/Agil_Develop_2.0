@@ -34,13 +34,13 @@ const TraerUsuarioxId = gql`
 const crearUsuario= gql`
     mutation (
          
-        $Nombres: String!, 
-        $Apellidos: String!, 
-        $Documento: Int!, 
-        $Status: Estado_Usuario!,
-        $Rol : Rol!,
-        $Password : String!) {
-    crearUsuario(
+        $Nombres: String, 
+        $Apellidos: String, 
+        $Documento: Int, 
+        $Status: Estado_Usuario,
+        $Rol: Rol,
+        $Password: String,) {
+    CrearUsuario(
         Nombres: $Nombres, 
         Apellidos: $Apellidos, 
         Documento: $Documento, 
@@ -60,6 +60,7 @@ const crearUsuario= gql`
         }
                  
 }
+
 `;
 const editarUsuario = gql`
   mutation (
@@ -68,15 +69,15 @@ const editarUsuario = gql`
     $Apellidos: String, 
     $Documento: Int, 
     $Status: Estado_Usuario,
-    $Rol : Rol,
-    $Password : String){
+    $Rol: Rol,
+    $Password: String){
     editarUsuario(
       Nombres: $Nombres, 
       Apellidos: $Apellidos, 
       Documento: $Documento, 
-      Email : $Email,
+      Email: $Email,
       Status: $Estado_usuario,
-      Rol : $Rol,
+      Rol: $Rol,
       Password: $Password){
         Nombres
         Apellidos 
@@ -85,12 +86,11 @@ const editarUsuario = gql`
         Rol
         Status
         Password 
+
       }
     
   }
 `;
-
-
 
 
 export default [

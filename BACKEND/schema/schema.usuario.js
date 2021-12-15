@@ -7,6 +7,7 @@ const tipoUsuario = gql`
     Apellidos: String
     Documento:Int
     Rol:Rol
+    Email : String
     Status: Estado_usuario
     Password: String
 }
@@ -58,5 +59,5 @@ export default [
     tipoUsuario,
     enums,
     queries,
-    mutations,
+    mutations
 ];

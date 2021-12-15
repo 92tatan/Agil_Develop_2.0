@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 const TraerUsuarios = gql`
   query   {
     AllUsuarios {
-        _id
+        
         Nombres
         Apellidos 
         Documento 
@@ -18,7 +18,7 @@ const TraerUsuarios = gql`
 const TraerUsuarioxId = gql`
   query ($Documento: Int) {
     UsuarioxId (Documento: $Documento) {
-      _id
+      
       Nombres
       Apellidos 
       Documento 

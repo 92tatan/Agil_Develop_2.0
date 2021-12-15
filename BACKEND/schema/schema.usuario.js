@@ -5,12 +5,12 @@ const tipoUsuario = gql`
 type Usuario{
     
     Nombres: String
-    Apellidos : String
-    Documento : Int
-    Email : String!
-    Rol : Rol!
-    Status : Estado_usuario!
-    Password : String!
+    Apellidos: String
+    Documento: Int
+    Email: String!
+    Rol: Rol!
+    Status: Estado_usuario!
+    Password: String!
    
   }
   `;

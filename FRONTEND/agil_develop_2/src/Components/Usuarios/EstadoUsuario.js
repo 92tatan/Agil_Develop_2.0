@@ -8,20 +8,34 @@ import queries from '../Usuarios/queries';
 
 export const EstadoUsuario = () => {
  
+  const [DatosMostrar, setDatosMostrar ]  = useState ([]) 
   const [IDUsuariobuscado, setUsuariobuscado] = useState({Documento:0});
 
   const data = useQuery(queries[1],{variables: {Documento:IDUsuariobuscado.Documento}}).data;
+  console.log (data)
     const TraerUsuarioxId = ()=>{
         const DataxId = data?.UsuarioxId
         console.log(DataxId)
-       // setDatosShow([DataxId])
+        setDatosMostrar([DataxId])
         }
-          
+
+    const  dataAll  = useQuery(queries[0]).data;
+        console.log(dataAll)
+        const TraerUsuario = ()=>{
+            const DataUsuarios = dataAll?.AllUsuarios
+            console.log(dataAll)
+            //setDatosMostrar([...DataUsuarios])
+            }
+        
+        //datoTodos
+        
+
           /// HU017
           const changeinputUsuario = (event)=>{
             setUsuariobuscado({...IDUsuariobuscado,[event.target.name]:parseInt(event.target.value)});
               console.log(IDUsuariobuscado)
               };
+
 
     return(
         <Container className="estado-container">
@@ -36,22 +50,34 @@ export const EstadoUsuario = () => {
         <h5><Form.Label>Documento Usuario</Form.Label></h5>
             <Form.Group xs ={6} as={Col}  className="mb-1" controlId="formGroup">
               <Form.Control onChange = {changeinputUsuario}
-                type="string" 
+                type= "number" 
                 placeholder="Escriba un número de documento" 
                 name="Documento"
                              />
             </Form.Group>   
 
-          <Button xs ={1} as={Col} 
+          <Button xs ={2} as={Col} 
            variant="primary"  
            type="button" 
-           onChange ={TraerUsuarioxId}
+           onClick ={TraerUsuarioxId}
            >
              Buscar
              </Button>
-                                              
+            
+                                                
         </Row>
         
+        <Row> 
+        <br/>
+            </Row>
+
+        <Button xs ={2} as={Col} 
+           variant="primary"  
+           type="button" 
+           onClick ={TraerUsuario}
+           >
+             Buscar Todos
+             </Button>
 
         <Row> 
         <br/>
@@ -76,14 +102,10 @@ export const EstadoUsuario = () => {
                 <th>Email</th>
                 <th>Tipo de Usuario</th>
                 <th>Estado</th>
-                
-              
-                
                 </tr>
             </thead>
             <tbody>
-          {data &&
-            data.AllUsuarios.map((u) => {
+          {DatosMostrar.map((u) => {
               return (
                 <tr key={u._id}>
                   <td>{u.Nombres}</td>

@@ -1,5 +1,5 @@
 import React from "react";
-import {BarNavegador} from '../../../../../../../ProyectoconRutas/Agil_Develop_2.0/FRONTEND/agil_develop_2/src/NavBar';
+import {BarNavegador} from '../../NavBar';
 import { useEffect } from "react";
 import {Row,  Col,  Container,  Table,  Form,  Button,  Placeholder,} from "react-bootstrap";
 

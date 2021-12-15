@@ -80,7 +80,7 @@ export const FormaEditarUsuario = ({UsuGuardar, setUsuGuardar}) =>{
                 type="text" 
                 placeholder="contraseña" 
                 abled 
-                name="contrasena"  
+                name="contraseña"  
                 abled
                 onChange ={changeinput}
                 />  

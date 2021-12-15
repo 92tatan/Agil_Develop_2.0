@@ -40,7 +40,7 @@ export const RutasNavegacion = ()=> {
             />
             <Route
                 exact
-                path="/Actualizar_Proyectos"
+                path="/Actualizar_Proyectos/:id"
                 component={ActualizarProyecto}
             />
             <Route

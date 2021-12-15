@@ -42,23 +42,23 @@ type Query {
   type Mutation{
     crearUsuario(
     Nombres: String!
-    Apellidos : String!
-    Documento : Int!
-    Email : String!
+    Apellidos: String!
+    Documento: Int!
+    Email: String!
     Status: Estado_usuario!
-    Rol : Rol!
-    Password : String!
+    Rol: Rol!
+    Password: String!
     ): Usuario
     
     editarUsuario(
-      _id : String!
+      _id: String!
       Nombres: String!
-      Apellidos : String!
-      Documento : Int!
-      Email : String!
+      Apellidos: String!
+      Documento: Int!
+      Email: String!
       Status: Estado_usuario!
-      Rol : Rol!
-      Password : String!
+      Rol: Rol!
+      Password: String!
     ): Usuario
     
     ModificarEstadoUsuario

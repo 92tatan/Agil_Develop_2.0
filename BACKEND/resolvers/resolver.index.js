@@ -1,10 +1,13 @@
 import Resolverproyecto from "./resolver.proyecto.js";
 import Resolveravance from "./resolver.avance.js";
 import Resolverinscripcion from "./resolver.inscripcion.js";
+import Resolverusuario from "./resolver.usuario.js";
 
 const { Queriesproyecto, Mutationsproyecto, ...Restproyecto } = Resolverproyecto;
 const { Queriesavance, Mutationsavance, ...Restavance } = Resolveravance;
 const { Queriesinscripcion, Mutationsinscripcion, ...Restinscripcion } = Resolverinscripcion;
+const { Queriesusuario, Mutationsusuario,  } = Resolverusuario;
+
 
 
 
@@ -13,6 +16,7 @@ export default {
         ...Queriesproyecto,
         ...Queriesavance,
         ...Queriesinscripcion,
+        ...Queriesusuario,
 
     },
     Mutation: {
@@ -20,6 +24,7 @@ export default {
         ...Mutationsproyecto,
         ...Mutationsavance,
         ...Mutationsinscripcion,
+        ...Mutationsusuario,
     },
     /*...Restproyecto*/
 };

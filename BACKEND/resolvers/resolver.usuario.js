@@ -35,20 +35,14 @@ const crearUsuario =  async (parent, args) =>{
         return usuarioCreado;
 };
 
-const editarUsuario = async (parent, args) =>{
-    const modificarUsuario = await Usuarios.findOneAndUpdate(args._id,{
-        Nombres: args.Nombres,
-        Apellidos : args.Apellidos,
-        Documento : args.Documento,
-        Email : args.Email,
-        Status: args.Status,
-        Password : args.Password,
-        });
-        return modificarUsuario;
 
+const EditUsu = async (parent, args) => {
+    const editusua = await Usuarios.findOneAndUpdate({Documento:args.Documento},{$set:{Nombres:args.Nombres, Apellidos:args.Apellidos, Documento:args.Documento, Email:args.Email, Rol:args.Rol, Password:args.Password}},{new:true});
+    console.log(`Usario ${args.Nombres} ${args.Apellidos} ha editado su datos` );
+    return editusua;
 };
 const ModificarEstadoUsuario = async (parent, args) => {
-    const Modifuser = await Usuarios.findOneAndUpdate({Documento:args.Documento},{$set:{Status:args.Estado_usuario}},{new:true});
+    const Modifuser = await Usuarios.findOneAndUpdate({Documento:args.Documento},{$set:{Statusc:args.Estado_usuario}},{new:true});
     console.log(`Estado de usuario ${args.Documento} modificado a ${args.Estado_usuario}` );
     return Modifuser;
 };
@@ -84,7 +78,7 @@ export default {
     },
     Mutationsusuario: {
         crearUsuario,
-        editarUsuario,
+        EditUsu,
         ModificarEstadoUsuario,
         login,
     },

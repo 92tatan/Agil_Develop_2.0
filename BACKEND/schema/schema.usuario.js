@@ -52,7 +52,7 @@ type Query {
     Password : String
     ): Usuario
     
-    editarUsuario(
+    EditUsu(
       
       Nombres: String
       Apellidos : String
@@ -62,7 +62,7 @@ type Query {
     ): Usuario
     
     ModificarEstadoUsuario
-    (Documento:Int, Status:Estado_usuario
+    (Documento:Int, Status :Estado_usuario
     ): Usuario
     
     login

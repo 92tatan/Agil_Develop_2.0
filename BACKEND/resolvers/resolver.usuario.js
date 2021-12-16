@@ -36,7 +36,7 @@ const crearUsuario =  async (parent, args) =>{
 };
 
 
-const EditUsu = async (parent, args) => {
+const editarUsuario = async (parent, args) => {
     const editusua = await Usuarios.findOneAndUpdate({Documento:args.Documento},{$set:{Nombres:args.Nombres, Apellidos:args.Apellidos, Documento:args.Documento, Email:args.Email, Rol:args.Rol, Password:args.Password}},{new:true});
     console.log(`Usario ${args.Nombres} ${args.Apellidos} ha editado su datos` );
     return editusua;
@@ -78,7 +78,7 @@ export default {
     },
     Mutationsusuario: {
         crearUsuario,
-        EditUsu,
+        editarUsuario,
         ModificarEstadoUsuario,
         login,
     },

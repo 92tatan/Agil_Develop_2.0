@@ -3,7 +3,6 @@ import  gql from 'graphql-tag';
 
 const tipoUsuario = gql`
 type Usuario{
-    
     Nombres: String
     Apellidos : String
     Documento : Int
@@ -11,10 +10,6 @@ type Usuario{
     Rol : Rol
     Status : Estado_usuario
     Password : String
-
-   
-
-   
   }
   `;
 
@@ -24,7 +19,7 @@ const enums = gql`
     AUTORIZADO
     NO_AUTORIZADO
   }
- 
+
   enum Rol{
     ESTUDIANTE 
     LIDER 
@@ -52,8 +47,7 @@ type Query {
     Password : String
     ): Usuario
     
-    EditUsu(
-      
+    editarUsuario(
       Nombres: String
       Apellidos : String
       Documento : Int

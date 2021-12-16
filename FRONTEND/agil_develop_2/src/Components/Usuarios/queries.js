@@ -56,7 +56,6 @@ const crearUsuario= gql`
 `;
 const editarUsuario = gql`
   mutation (
-    
     $Nombres: String, 
     $Apellidos: String, 
     $Documento: Int,

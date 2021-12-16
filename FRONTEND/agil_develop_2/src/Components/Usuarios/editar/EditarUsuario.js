@@ -11,7 +11,7 @@ export const EditarUsuario = ()=> {
     const [editUsuario] = useMutation(queries[3],{variables: {
             Nombres: UsuGuardar.NombreUsuario,  
             Apellidos: UsuGuardar.ApellidoUsuario, 
-            Documento: parseInt(UsuGuardar.id), 
+            Documento: parseInt(UsuGuardar.Documento), 
             Email: UsuGuardar.Correo, 
             Password: UsuGuardar.contraseña
             
@@ -19,7 +19,7 @@ export const EditarUsuario = ()=> {
 
     const editarUsu = ()=>{
         console.log(UsuGuardar)
-        //editUsuario()
+        editUsuario()
     };
 
     return(

@@ -51,9 +51,9 @@ export const FormaEditarUsuario = ({UsuGuardar, setUsuGuardar}) =>{
             <center><h5> <Form.Label >Número de identificación</Form.Label> </h5>
                 <Form.Group xs ={6} as={Col} className="mb" controlId="formGroupDescription">
                     <Form.Control 
-                    type="text" 
-                    placeholder="Id" 
-                    name="Id" 
+                    type="number" 
+                    placeholder="Documento" 
+                    name="Documento" 
                     onChange ={changeinput}
                     />  
             </Form.Group> </center>

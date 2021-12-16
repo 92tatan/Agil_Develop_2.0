@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {BarNavegador} from '../../../NavBar';
-import {Row,  Col,  Container,   Form,  Button,  Placeholder,InputGroup} from "react-bootstrap";
-import {useMutation, useQuery} from "@apollo/client";
+import {Row,  Col,  Container, Button} from "react-bootstrap";
+import {useMutation} from "@apollo/client";
 import queries from '../queries';
 import {Formulario} from './FormaDatos'
 
 export const RegistroProyecto = ()=> {
     const [ProyGuardar, setProyGuardar]= useState({});
 
-    /* const [listaProyectos, setListaProyectos] = useState([{Id_proyecto:0}]);
-    const  data1 = useQuery(queries[0]).data;
-    const buscarultimo = ()=>{
-            const DataTodos = data1?.AllProyectos
-            console.log([...DataTodos])
-            setListaProyectos(...DataTodos)
-            console.log(listaProyectos)
-            }
-    useEffect(() => {      
-        buscarultimo()
-        buscarultimo()
-    }, []); */
     const [addProyecto] = useMutation(queries[4],{variables: {
         idProyecto: parseInt(ProyGuardar.Id_proyecto), 
         nombreProyecto: ProyGuardar.Nombre_proyecto, 
@@ -45,10 +33,6 @@ export const RegistroProyecto = ()=> {
         addProyecto()
         console.log(addProyecto.data);
         }
-        useEffect(() => {
-        
-        
-    }, []);
 
     return(
         <div>

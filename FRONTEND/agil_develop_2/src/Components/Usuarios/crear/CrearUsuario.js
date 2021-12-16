@@ -1,50 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import {BarNavegador} from '../../../NavBar';
-import { useEffect,useState, useMutation } from "react";
+import { useMutation } from "@apollo/client";
 import {Row,  Col,  Container,  Table,  Form,  Button,  Placeholder,} from "react-bootstrap";
 import {Formausuario}  from "./formUsuario";
 import queries from '../queries';
 
-
 export const CrearUsuario = ()=> {
     const [UsuGuardar, setUsuGuardar]= useState({});
     
-    //  const [addUsuario] = useMutation(queries[2],{variables: {
-    //      Nombres: UsuGuardar.NombreUsuario,  
-    //      Apellidos: UsuGuardar.ApellidoUsuario, 
-    //      Documento: parseInt(UsuGuardar.Usuarioid), 
-    //      Email: UsuGuardar.Correo, 
-    //      Rol: UsuGuardar.Rol, 
-    //      Password: UsuGuardar.contraseña
+    const [addUsuario] = useMutation(queries[2],{variables: {
+        Nombres: UsuGuardar.NombreUsuario,  
+        Apellidos: UsuGuardar.ApellidoUsuario, 
+        Documento: parseInt(UsuGuardar.Usuarioid), 
+        Email: UsuGuardar.Correo, 
+        Rol: UsuGuardar.Rol, 
+        Password: UsuGuardar.contraseña
         
-    //   }}) 
-
+    }}) 
 
     const crearUsu = ()=>{
         //console.log(UsuGuardar)
-        //addUsuario()
+        addUsuario()
         console.log(UsuGuardar)
     };
-
-    
-
     
     return(
-
-<div>
-        <BarNavegador />,
-        
-           
+        <div>
+        <BarNavegador />
+        <Container>
+        <Row className="mb-3">
+        <h2 className="text-center"> Registro de Usuarios</h2>
+        </Row> 
         <Formausuario UsuGuardar = {UsuGuardar} setUsuGuardar = {setUsuGuardar} />
-        <Button xs ={4} as={Col} 
-         variant="primary"  
-         type="button" onClick={crearUsu}
-         >
-           Crear Usuario
-           </Button>
-
-       
-
+        <Col xs="7">
+        <Button variant="dark" className="float-end" mb-3 size="lg" onClick={crearUsu}>
+            Crear Usuario
+        </Button>
+        </Col>
+        </Container>
         </div>
     )
 

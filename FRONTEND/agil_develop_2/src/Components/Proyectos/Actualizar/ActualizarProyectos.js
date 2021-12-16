@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Container,Row,Button,Form,Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container,Row,Button,Col } from "react-bootstrap";
 import {BarNavegador} from '../../../NavBar';
 import {Formulario} from "./FormaActualizacion";
 import {useQuery,useMutation} from "@apollo/client";
@@ -44,8 +44,6 @@ export const ActualizarProyecto = ()=> {
         actFase()
         }   
 
-    useEffect(() => {      
-    }, []);
     return(
         <>
         <BarNavegador />

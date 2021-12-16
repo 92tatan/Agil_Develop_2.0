@@ -3,7 +3,6 @@ import { gql } from "@apollo/client";
 const TraerUsuarios = gql`
   query   {
     AllUsuarios {
-        
         Nombres
         Apellidos 
         Documento 
@@ -18,7 +17,6 @@ const TraerUsuarios = gql`
 const TraerUsuarioxId = gql`
   query ($Documento: Int) {
     UsuarioxId (Documento: $Documento) {
-      
       Nombres
       Apellidos 
       Documento 
@@ -30,17 +28,15 @@ const TraerUsuarioxId = gql`
   }
 `;
 
-
 const crearUsuario= gql`
     mutation (
-         
         $Nombres: String, 
         $Apellidos: String, 
         $Documento: Int,
         $Email : String,
         $Rol: Rol,
-        $Password: String,) {
-    CrearUsuario(
+        $Password: String){  
+    crearUsuario(
         Nombres: $Nombres, 
         Apellidos: $Apellidos, 
         Documento: $Documento, 
@@ -48,7 +44,6 @@ const crearUsuario= gql`
         Rol : $Rol,
         Password: $Password) 
         {
-          
           Nombres
           Apellidos 
           Documento 
@@ -56,7 +51,6 @@ const crearUsuario= gql`
           Rol
           Password
         }
-                 
 }
 
 `;

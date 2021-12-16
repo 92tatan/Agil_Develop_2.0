@@ -1,27 +1,13 @@
-import React, { useState , useEffect } from "react";
-import {Row,  Col,  Container,   Form,  Button,  Placeholder,InputGroup} from "react-bootstrap";
+import React from "react";
+import {Row,  Col, Form, Placeholder,InputGroup} from "react-bootstrap";
 import {useQuery} from "@apollo/client";
 import queries from '../queries';
 
 export const Formulario = ({ProyGuardar, setProyGuardar})=>{
-    
     const  data1 = useQuery(queries[0]).data;
-    
-    const buscartodos = ()=>{
-        const DataTodos = data1?.AllProyectos
-        const ultimo = DataTodos[50].Id_proyecto+1
-        
-        console.log(DataTodos)
-        //setListaProyectos([DataTodos,...DataTodos])
-        console.log(ultimo)
-        return (ultimo)
-            }
-
-    const ultimoId = 4
-
-    useEffect(() => {      
-        
-    }, []);
+    console.log(data1)
+    //const DataTodos = data1?.AllProyectos
+    //console.log(DataTodos)
     
     const changeinput = (event)=> {
         setProyGuardar({...ProyGuardar,[event.target.name]:event.target.value})};
@@ -44,9 +30,9 @@ export const Formulario = ({ProyGuardar, setProyGuardar})=>{
                 <Form.Control
                 type="text"
                 placeholder=" Número Proyecto Automatico "
-                //disabled
+                disabled
                 name="Id_proyecto"
-                //value= {ultimoId}
+                value= {data1?.AllProyectos[data1?.AllProyectos.length-1].Id_proyecto+1}
                 onChange ={changeinput}
                 />
             </Form.Group>

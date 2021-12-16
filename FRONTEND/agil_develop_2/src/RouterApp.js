@@ -7,12 +7,12 @@ import {ExplorarProyecto} from './Components/Proyectos/Explorar/ExplorarProyecto
 import {ActualizarProyecto} from './Components/Proyectos/Actualizar/ActualizarProyectos';
 import {InscripcionProyecto} from './Components/Inscripciones/InscripcionProyectos';
 import {ExplorarInscripcion} from './Components/Inscripciones/ExplorarInscripciones';
-import {RegistrarAvance} from './Components/Avances/RegistrarAvances';
-import {ExplorarAvance} from './Components/Avances/ExplorarAvances';
-import { CrearUsuario } from "./Components/Usuarios/crear/CrearUsuario";
-import {EditarUsuario} from './Components/Usuarios/editar/EditarUsuario';
+import {RegistroAvance} from './Components/Avances/Registro/RegistrarAvances';
+import {ExplorarAvance} from './Components/Avances/Explorar/ExplorarAvances';
+import {ActualizarObservacion} from './Components/Avances/Actualizar/ActualizarObservacion';
+import {ActualizarDescripcion} from './Components/Avances/Actualizar/ActualizarDescripcion';
+import {Perfil} from './Components/Usuarios/Perfil';
 import {EstadoUsuario} from './Components/Usuarios/EstadoUsuario';
-
 
 
 export const RutasNavegacion = ()=> {
@@ -42,7 +42,7 @@ export const RutasNavegacion = ()=> {
             />
             <Route
                 exact
-                path="/Actualizar_Proyectos/:id"
+                path="/Actualizar_Proyectos"
                 component={ActualizarProyecto}
             />
             <Route
@@ -50,18 +50,11 @@ export const RutasNavegacion = ()=> {
                 path="/Estado_Usuario"
                 component={EstadoUsuario}
             />
-
             <Route
                 exact
-                path="/Crear_Usuario"
-                component={CrearUsuario}
+                path="/Perfil"
+                component={Perfil}
             />
-            <Route
-                exact
-                path="/perfil"
-                component={EditarUsuario}
-            />
-           
             <Route
                 exact
                 path="/Inscripcion_Proyectos"
@@ -74,14 +67,24 @@ export const RutasNavegacion = ()=> {
             />
             <Route
                 exact
-                path="/Registro_Avances"
-                component={RegistrarAvance}
+                path="/Registro_Avances/:id"
+                component={RegistroAvance}
             />
             <Route
                 exact
-                path="/Explorar_Avances"
+                path="/Explorar_Avances/:id"
                 component={ExplorarAvance}
             />
+            <Route
+                exact
+                path="/Actualizar_Observaciones/:id"
+                component={ActualizarObservacion}
+            />            
+            <Route
+                exact
+                path="/Actualizar_Descripciones/:id"
+                component={ActualizarDescripcion}
+            />            
             
             </ Router>
 </>

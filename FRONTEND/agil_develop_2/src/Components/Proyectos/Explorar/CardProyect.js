@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import { Card,Button,Row ,Col,Accordion,ButtonGroup} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
 export const CardProyect = ({Project})=>{
     const [projectActivo, setProjectActivo] = useState(false)
 
@@ -51,13 +52,14 @@ export const CardProyect = ({Project})=>{
             <Button  variant="success" href="/Inscripcion_Proyectos" disabled={!projectActivo}>Inscripción</Button>
             <br /><br />
             <Row className="mb-3">
-            <Col>
-            <Button variant="secondary" href="/Registro_Avances" disabled={!projectActivo}>Agregar Avance</Button>
+            <Col><Link to={`/Registro_Avances/${Project.Id_proyecto}`}>
+            <Button variant="secondary"  disabled={!projectActivo}>Nuevo Avance</Button></Link>
             </Col>
+            <Col><Link to={`/Explorar_Avances/${Project.Id_proyecto}`}>
+            <Button variant="secondary"  disabled={!projectActivo}>Ver Avances</Button></Link>
+            </Col>            
             <Col>
-            <Link to={`/Actualizar_Proyectos/${Project.Id_proyecto}`}>
-            <Button variant="secondary" id={Project.Id_proyecto} disabled={!projectActivo}>Actualizar</Button>
-            </Link>
+            <Button variant="secondary" href="/Actualizar_Proyectos" disabled={!projectActivo}>Actualizar</Button>
             </Col>
             </Row>
         </Card.Body>

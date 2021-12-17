@@ -8,13 +8,13 @@ type Usuario{
     Documento : Int
     Email : String
     Rol : Rol
-    Status : Estado_usuario
+    Status : Status
     Password : String
   }
   `;
 
 const enums = gql`
-  enum Estado_usuario{
+  enum Status{
     PENDIENTE
     AUTORIZADO
     NO_AUTORIZADO
@@ -55,8 +55,8 @@ type Query {
       Password : String
     ): Usuario
     
-    ModificarEstadoUsuario
-    (Documento:Int, Status :Estado_usuario
+    Modifuser
+    (Documento:Int, Status :Status
     ): Usuario
     
     login

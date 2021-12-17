@@ -1,12 +1,12 @@
 import React from "react";
-import {BarNavegador} from '../../NavBar';
+import {BarNavegador} from '../../../NavBar';
 import { useState } from "react";
-import {Row,  Col,  Container,  Table,  Form,  Button,  Placeholder, FormGroup,} from "react-bootstrap";
+import {Row,   Col,  Container,  Table,  Form,  Button,  Placeholder, FormGroup,} from "react-bootstrap";
 import {useQuery} from "@apollo/client";
-import queries from '../Usuarios/queries';
+import queries from '../queries';
+import { Link } from "react-router-dom";
 
-
-export const EstadoUsuario = () => {
+export const ExUsuarioEstado = () => {
  
   const [DatosMostrar, setDatosMostrar ]  = useState ([]) 
   const [IDUsuariobuscado, setUsuariobuscado] = useState({Documento:0});
@@ -24,7 +24,7 @@ export const EstadoUsuario = () => {
         const TraerUsuario = ()=>{
             const DataUsuarios = dataAll?.AllUsuarios
             console.log(dataAll)
-            //setDatosMostrar([...DataUsuarios])
+            setDatosMostrar([...DataUsuarios])
             }
         
         //datoTodos
@@ -43,10 +43,22 @@ export const EstadoUsuario = () => {
           <Col xl={15} className="estadousuarios-form"></Col>
         <div>
         <BarNavegador />
-        <h2 className="text-center mt-5" >Estado de Usuario </h2>
+        <h2 className="text-center mt-5" >Explorador de Usuarios </h2>
         </div>
 
         <Row>
+
+        <Button xs ={2} as={Col} 
+           variant="primary"  
+           type="button" 
+           onClick ={TraerUsuario}
+           >
+             Buscar Todos
+             </Button>
+
+        <Row> 
+        <br/>
+            </Row>
         <h5><Form.Label>Documento Usuario</Form.Label></h5>
             <Form.Group xs ={6} as={Col}  className="mb-1" controlId="formGroup">
               <Form.Control onChange = {changeinputUsuario}
@@ -61,7 +73,7 @@ export const EstadoUsuario = () => {
            type="button" 
            onClick ={TraerUsuarioxId}
            >
-             Buscar
+             Buscar Usuario
              </Button>
             
                                                 
@@ -71,17 +83,7 @@ export const EstadoUsuario = () => {
         <br/>
             </Row>
 
-        <Button xs ={2} as={Col} 
-           variant="primary"  
-           type="button" 
-           onClick ={TraerUsuario}
-           >
-             Buscar Todos
-             </Button>
-
-        <Row> 
-        <br/>
-            </Row>
+      
 
             <Row>
             <center><h5><Form.Label> Usuarios Registrados</Form.Label></h5></center>
@@ -102,6 +104,7 @@ export const EstadoUsuario = () => {
                 <th>Email</th>
                 <th>Tipo de Usuario</th>
                 <th>Estado</th>
+                <th>Modificar Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -114,8 +117,11 @@ export const EstadoUsuario = () => {
                   <td>{u.Rol}</td>
                   <td>{u.Status}</td>
                   <td>
-                    
+                    <Link to={`/Estado_Usuario/Actualizar_Estado/${u.Documento}`}>
+                    <i class='fas fa-pen hover:text-yellow-400 cursor-pointer'>Editar</i>
+                    </Link>
                   </td>
+                 
                 </tr>
               );
             })}
@@ -124,22 +130,7 @@ export const EstadoUsuario = () => {
            
     </Row>
 
-    <Row> 
-        <FormGroup xs ={5} as={Col} >
-        <Form.Select  className="me-sm-2" name="Estado" >
-            <option value="0">Modificar Estado</option>
-            <option value="PENDIENTE">Pendiente</option>
-            <option value="AUTORIZADO">Autorizado</option>
-            <option value="NO_AUTORIZADO">No Autorizado</option>
-            </Form.Select>
-            </FormGroup>
-            </Row>
-
-
-        </Row>
-
-
-
+    </Row>
         </Container>         
 
         

@@ -41,12 +41,11 @@ const editarUsuario = async (parent, args) => {
     console.log(`Usario ${args.Nombres} ${args.Apellidos} ha editado su datos` );
     return editusua;
 };
-const ModificarEstadoUsuario = async (parent, args) => {
-    const Modifuser = await Usuarios.findOneAndUpdate({Documento:args.Documento},{$set:{Statusc:args.Estado_usuario}},{new:true});
-    console.log(`Estado de usuario ${args.Documento} modificado a ${args.Estado_usuario}` );
+const Modifuser = async (parent, args) => {
+    const Modifuser = await Usuarios.findOneAndUpdate({Documento:args.Documento},{$set:{Status:args.Status}},{new:true});
+    console.log(`Estado de usuario ${args.Documento} modificado a ${args.Status}` );
     return Modifuser;
-};
-
+    };
 
 
     const login = async (parent, args) => {
@@ -79,7 +78,7 @@ export default {
     Mutationsusuario: {
         crearUsuario,
         editarUsuario,
-        ModificarEstadoUsuario,
+        Modifuser,
         login,
     },
  };

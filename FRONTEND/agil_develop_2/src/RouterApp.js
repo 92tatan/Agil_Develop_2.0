@@ -18,72 +18,75 @@ import {EstadoUsuario} from './Components/Usuarios/EstadoUsuario';
 export const RutasNavegacion = ()=> {
 
     return(
-        <>
-        <Router>
-            <Route
-                exact
-                path="/"
-                component={Login}
-            />
-            <Route
-                exact
-                path="/Home"
-                component={Home}
-            />, 
-            <Route
-                exact
-                path="/Registro_Proyectos"
-                component={RegistroProyecto}
-            /> 
-            <Route
-                exact
-                path="/Explorar_Proyectos"
-                component={ExplorarProyecto}
-            />
-            <Route
-                exact
-                path="/Actualizar_Proyectos/:id"
-                component={ActualizarProyecto}
-            />
-            <Route
-                exact
-                path="/Estado_Usuario"
-                component={EstadoUsuario}
-            />
+        <>  
+            <BrowserRouter>
+                <Routes>
+                    <Route
+                        
+                        path="/"
+                        element={<Login/>}
+                    
+                    />
+                    <Route
+                        
+                        path="/home"
+                        element={<Home/>}
+                    />
+                    <Route
+                        
+                        path="/Registro_Proyectos"
+                        component={<RegistroProyecto/>}
+                    /> 
+                    <Route
+                        exact
+                        path="/Explorar_Proyectos"
+                        component={ExplorarProyecto}
+                    />
+                    <Route
+                        exact
+                        path="/Actualizar_Proyectos/:id"
+                        component={ActualizarProyecto}
+                    />
+                    <Route
+                        exact
+                        path="/Estado_Usuario"
+                        component={EstadoUsuario}
+                    />
 
-            <Route
-                exact
-                path="/Crear_Usuario"
-                component={CrearUsuario}
-            />
-            <Route
-                exact
-                path="/perfil"
-                component={EditarUsuario}
-            />
-           
-            <Route
-                exact
-                path="/Inscripcion_Proyectos"
-                component={InscripcionProyecto}
-            />
-            <Route
-                exact
-                path="/Explorar_Inscripciones"
-                component={ExplorarInscripcion}
-            />
-            <Route
-                exact
-                path="/Registro_Avances"
-                component={RegistrarAvance}
-            />
-            <Route
-                exact
-                path="/Explorar_Avances"
-                component={ExplorarAvance}
-            />
-            
-            </ Router>
-</>
+                    <Route
+                        exact
+                        path="/Crear_Usuario"
+                        component={CrearUsuario}
+                    />
+                    <Route
+                        exact
+                        path="/perfil"
+                        component={EditarUsuario}
+                    />
+                
+                    <Route
+                        exact
+                        path="/Inscripcion_Proyectos"
+                        component={InscripcionProyecto}
+                    />
+                    <Route
+                        exact
+                        path="/Explorar_Inscripciones"
+                        component={ExplorarInscripcion}
+                    />
+                    <Route
+                        exact
+                        path="/Registro_Avances"
+                        component={RegistrarAvance}
+                    />
+                    <Route
+                        exact
+                        path="/Explorar_Avances"
+                        component={ExplorarAvance}
+                    />
+                    
+                </Routes>
+            </BrowserRouter>
+        </>
     )
 }

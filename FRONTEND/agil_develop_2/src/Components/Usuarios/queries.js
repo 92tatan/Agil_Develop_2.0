@@ -77,11 +77,21 @@ const editarUsuario = gql`
     
   }
 `;
+const modificarEstado   = gql`
+    mutation ($documento: Int, $status: Status) {
+        Modifuser(Documento: $documento, Status: $status) {
 
+        Documento 
+       
+        Status
+          
+        }
+    }`;
 
 export default [
   TraerUsuarios,
   TraerUsuarioxId,
   crearUsuario,
   editarUsuario,
+  modificarEstado
 ];

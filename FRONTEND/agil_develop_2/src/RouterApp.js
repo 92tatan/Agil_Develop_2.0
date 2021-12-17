@@ -11,9 +11,9 @@ import {RegistroAvance} from './Components/Avances/Registro/RegistrarAvances';
 import {ExplorarAvance} from './Components/Avances/Explorar/ExplorarAvances';
 import {ActualizarObservacion} from './Components/Avances/Actualizar/ActualizarObservacion';
 import {ActualizarDescripcion} from './Components/Avances/Actualizar/ActualizarDescripcion';
-import {Perfil} from './Components/Usuarios/Perfil';
 import {EstadoUsuario} from './Components/Usuarios/EstadoUsuario';
-
+import { CrearUsuario } from "./Components/Usuarios/crear/CrearUsuario";
+import {EditarUsuario} from './Components/Usuarios/editar/EditarUsuario';
 
 export const RutasNavegacion = ()=> {
 
@@ -42,7 +42,7 @@ export const RutasNavegacion = ()=> {
             />
             <Route
                 exact
-                path="/Actualizar_Proyectos"
+                path="/Actualizar_Proyectos/:id"
                 component={ActualizarProyecto}
             />
             <Route
@@ -52,8 +52,13 @@ export const RutasNavegacion = ()=> {
             />
             <Route
                 exact
-                path="/Perfil"
-                component={Perfil}
+                path="/Crear_Usuario"
+                component={CrearUsuario}
+            />
+            <Route
+                exact
+                path="/EditarUsuario"
+                component={EditarUsuario}
             />
             <Route
                 exact

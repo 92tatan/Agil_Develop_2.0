@@ -59,7 +59,9 @@ export const CardProyect = ({Project})=>{
             <Button variant="secondary"  disabled={!projectActivo}>Ver Avances</Button></Link>
             </Col>            
             <Col>
-            <Button variant="secondary" href="/Actualizar_Proyectos" disabled={!projectActivo}>Actualizar</Button>
+            <Link to={`/Actualizar_Proyectos/${Project.Id_proyecto}`}>
+            <Button variant="secondary" id={Project.Id_proyecto} disabled={!projectActivo}>Actualizar</Button>
+            </Link>
             </Col>
             </Row>
         </Card.Body>

@@ -47,7 +47,7 @@ export const RegistroAvance = ()=> {
         <Row className="mb-2">
         <Col xs="7">
         <Button variant="dark"  className="float-end" mb-3 size="lg" onClick={registrarAvance}>
-            Registrar Proyecto
+            Registrar Avance
         </Button>
         </Col>
         </Row>

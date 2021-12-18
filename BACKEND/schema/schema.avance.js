@@ -3,12 +3,12 @@ import  gql from 'graphql-tag';
 const tipoAvance = gql`
     # Avance
     type Avance {
-    Id_avance:Int!
-    Id_proyecto:Int!
-    Documento:Int!
-    Fecha_avance: String!
-    DescripciOn_avance: String!
-    Observaciones_lider: String!
+    Id_avance:Int
+    Id_proyecto:Int
+    Documento:Int
+    Fecha_avance: String
+    DescripciOn_avance: String
+    Observaciones_lider: String
 }
 `;
 
@@ -19,7 +19,7 @@ type Query {
 }
 
 type Query {
-    AvancesxProyecto(Id_proyecto:Int): Avance
+    AvancesxProyecto(Id_proyecto:Int): [Avance]
 }
 
 `;
@@ -34,11 +34,11 @@ type Mutation {
 }
 
 type Mutation {
-    ModifObsxAvan(Id_avance:Int!,Id_proyecto:Int!,Observaciones_lider:String!): Avance
+    ModifObsxAvan(Id_avance:Int!,Observaciones_lider:String!): Avance
 }
 
 type Mutation {
-    ModifDesxAvan(Id_avance:Int!,Id_proyecto:Int!,DescripciOn_avance:String!): Avance
+    ModifDesxAvan(Id_avance:Int!,DescripciOn_avance:String!): Avance
 }
 
 `;

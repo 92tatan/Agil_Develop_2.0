@@ -16,17 +16,17 @@ import { UserContext } from "./context/userContext";
 //   uri: 'https://servidor-gql-pomodoro.herokuapp.com/graphql'
 // })
 
-const authLink = setContext((_, { headers }) => {
+// const authLink = setContext((_, { headers }) => {
 
-  //encada request de graphql obtenemos el token y lo enviamos al back
-  const token = JSON.parse(localStorage.getItem('token'));
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
+//   //encada request de graphql obtenemos el token y lo enviamos al back
+//   const token = JSON.parse(localStorage.getItem('token'));
+//   return {
+//     headers: {
+//       ...headers,
+//       authorization: token ? `Bearer ${token}` : '',
+//     },
+//   };
+// });
 
  
   
@@ -47,10 +47,10 @@ const authLink = setContext((_, { headers }) => {
       if (authToken) {
         const decoded = jwt_decode(authToken);
         setUserData({
-          _id: decoded._id,
-          email_usuario:decoded.email_usuario,
-          rol_usuario:decoded.rol_usuario,
-          estado_usuario:decoded.estado_usuario,
+         // _id: decoded._id,
+          Email:decoded.Email,
+          rol:decoded.rol,
+          Estado_usuario:decoded.Estado_usuario,
           autenticado_usuario:decoded.autenticado_usuario
         });
       }

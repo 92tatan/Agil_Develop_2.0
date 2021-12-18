@@ -90,7 +90,7 @@ export const Login = () =>{
                                 <Form.Label>Contraseña</Form.Label>
                                 <Form.Control type="password" placeholder="Ingresa tu contraseña" name="password"  />
                             </Form.Group>
-                            <Link to={'/home'} className="link">¿Has olvidado tu contraseña?</Link>
+                            <Link to={'/home'} className="link">entrar</Link>
                             <br />
                             <br />
                             <Button 

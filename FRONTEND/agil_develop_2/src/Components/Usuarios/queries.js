@@ -85,26 +85,23 @@ const editarUsuario = gql`
   }
 `;
 
-const Login =gql`
-  mutation (
-  $Email: String!, 
-  $Password: String!
+const LOGIN =gql`
+mutation Login(
+  $email: String, 
+  $password: String
   ) {
   login(
-    Email: $Email, 
-    Password: $Password
-    ) {
-    token
-    error
-  }
+    Email: $email, 
+    Password: $password
+    )
 }
 `;
 
 
-export default [
+export default[
   TraerUsuarios,
   TraerUsuarioxId,
   crearUsuario,
   editarUsuario,
-  Login
+  LOGIN
 ];

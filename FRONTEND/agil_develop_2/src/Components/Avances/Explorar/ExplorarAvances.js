@@ -25,7 +25,6 @@ export const ExplorarAvance = ()=> {
             <table className="tabla">
                 <thead>
                 <tr>
-
                     <th>Id Proyecto</th>
                     <th>Documento </th>
                     <th>Fecha</th>
@@ -36,7 +35,6 @@ export const ExplorarAvance = ()=> {
                 </thead>
                 
                 <tbody>
-
                     {data &&
                     data.AvancesxProyecto.map((avance) => {
                     return (
@@ -50,7 +48,7 @@ export const ExplorarAvance = ()=> {
                                 <Link to={`/Actualizar_Observaciones/${avance.Id_avance}`}>
                                     <Button variant="secondary" >Observaciones</Button></Link>&nbsp;
                                 <Link to={`/Actualizar_Descripciones/${avance.Id_avance}`}>
-                                    <Button variant="secondary" >Decripcion</Button></Link>                            
+                                    <Button variant="secondary" >Decripción</Button></Link>                            
                             </td>
                         </tr>
                     );

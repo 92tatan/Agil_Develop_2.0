@@ -11,7 +11,7 @@ const AllAvances = async () => {
 const AvancesxProyecto = async (parent,args) => {
     //console.log(le= );t id=1
     console.log(`Valor de los argumentos ${args.Id_proyecto}`)
-    const avanxproyid = await Avance.findOne({Id_proyecto:args.Id_proyecto});
+    const avanxproyid = await Avance.find({Id_proyecto:args.Id_proyecto});
     console.log(`Valor de   ${avanxproyid}`)
     return avanxproyid;
 };

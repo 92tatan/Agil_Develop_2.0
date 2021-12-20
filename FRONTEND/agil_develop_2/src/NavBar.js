@@ -39,10 +39,7 @@ export const BarNavegador = ()=>{
             <Dropdown.Item href="/Explorar_Inscripciones">Explorar Inscripciones</Dropdown.Item>
         </DropdownButton>
         <NavDropdown.Divider />
-        <DropdownButton variant="secondary" menuVariant="dark" title="Avances" className="mt-2" >
-            <Dropdown.Item href="/Registro_Avances">Registrar Avances</Dropdown.Item>
-            <Dropdown.Item href="/Explorar_Avances">Explorar Avances</Dropdown.Item>
-        </DropdownButton>
+        
         <NavDropdown.Divider />
         
         <NavDropdown.Divider />

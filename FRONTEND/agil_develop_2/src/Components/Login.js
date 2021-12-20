@@ -62,6 +62,7 @@ export const Login = () =>{
                                 className="login" 
                                 variant="primary" 
                                 type="submit"  
+                                href = "/home"
                                 // disabled={ loading }
                             >
                                 Iniciar sesión

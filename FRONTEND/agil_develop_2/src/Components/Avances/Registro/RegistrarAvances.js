@@ -5,6 +5,7 @@ import {useMutation, useQuery} from "@apollo/client";
 import queries from '../queries';
 import {Formulario} from './FormAvances';
 import { useParams } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 
 export const RegistroAvance = ()=> {
@@ -26,6 +27,14 @@ export const RegistroAvance = ()=> {
 
 
         addAvance();
+        Swal.fire({
+            title: 'Registro Exitoso!',
+            text: " ",
+            icon: 'success',
+            confirmButtonText: "Home",
+        }).then(function() {
+            window.location = "/Home";
+        })
         }
         useEffect(() => {
             setAvanceGuardar({...AvanceGuardar,["Id_proyecto"]:Id_proyecto_Param1});

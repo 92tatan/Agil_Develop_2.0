@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import {Row,  Col,  Container,  Table,  Form,  Button,  Placeholder,} from "react-bootstrap";
 import {Formausuario}  from "./formUsuario";
 import queries from '../queries';
+import Swal from 'sweetalert2';
 
 export const CrearUsuario = ()=> {
     const [UsuGuardar, setUsuGuardar]= useState({});
@@ -22,6 +23,14 @@ export const CrearUsuario = ()=> {
         //console.log(UsuGuardar)
         addUsuario()
         console.log(UsuGuardar)
+        Swal.fire({
+            title: 'Registro Exitoso!',
+            text: " ",
+            icon: 'success',
+            confirmButtonText: "Home",
+        }).then(function() {
+            window.location = "/Home";
+        })
     };
     
     return(

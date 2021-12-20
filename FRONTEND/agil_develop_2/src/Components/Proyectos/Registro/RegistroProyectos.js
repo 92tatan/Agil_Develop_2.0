@@ -4,6 +4,7 @@ import {Row,  Col,  Container, Button} from "react-bootstrap";
 import {useMutation} from "@apollo/client";
 import queries from '../queries';
 import {Formulario} from './FormaDatos'
+import Swal from 'sweetalert2';
 
 export const RegistroProyecto = ()=> {
     const [ProyGuardar, setProyGuardar]= useState({});
@@ -32,6 +33,14 @@ export const RegistroProyecto = ()=> {
         console.log(ProyGuardar);
         addProyecto()
         console.log(addProyecto.data);
+        Swal.fire({
+            title: 'Registro Exitoso!',
+            text: " ",
+            icon: 'success',
+            confirmButtonText: "Home",
+        }).then(function() {
+            window.location = "/Home";
+        })
         }
 
     return(

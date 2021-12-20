@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import {Row,  Col,  Container,  Table,  Form,  Button,  Placeholder,} from "react-bootstrap";
 import {FormaEditarUsuario}  from "./formEditar";
 import queries from '../queries';
+import Swal from 'sweetalert2';
 
 export const EditarUsuario = ()=> {
     const [UsuGuardar, setUsuGuardar]= useState({});
@@ -20,6 +21,14 @@ export const EditarUsuario = ()=> {
     const editarUsu = ()=>{
         console.log(UsuGuardar)
         editUsuario()
+        Swal.fire({
+            title: 'Edicion Exitosa!',
+            text: " ",
+            icon: 'success',
+            confirmButtonText: "Home",
+        }).then(function() {
+            window.location = "/Home";
+        })
     };
 
     return(
